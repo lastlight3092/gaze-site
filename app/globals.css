@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap");
+@import "tailwindcss";
+
+:root {
+  --ink:        #1a1510;
+  --espresso:   #2c2018;
+  --walnut:     #3d2e1e;
+  --tobacco:    #6b4f35;
+  --tan:        #9a7d5f;
+  --linen:      #c8b49a;
+  --parchment:  #e2d5c3;
+  --cream:      #f0e8db;
+  --raw:        #f7f2eb;
+
+  --brass:      #a8895a;
+  --brass-dim:  #7a6340;
+
+  --serif:   "Playfair Display", Georgia, serif;
+  --sans:    "DM Sans", system-ui, sans-serif;
+
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-circ: cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-family: var(--sans);
+  background: var(--ink);
+  color: var(--parchment);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body { min-height: 100vh; overflow-x: hidden; }
+
+/* ─── Custom cursor ─── */
+#cursor {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--brass);
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s var(--ease-expo), width 0.3s var(--ease-expo), height 0.3s var(--ease-expo), opacity 0.3s;
+  mix-blend-mode: difference;
+}
+#cursor-ring {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(168,137,90,0.5);
+  position: fixed; top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s var(--ease-expo), width 0.4s var(--ease-expo), height 0.4s var(--ease-expo), opacity 0.4s;
+}
+.cursor-hover #cursor { width: 48px; height: 48px; opacity: 0.3; }
+.cursor-hover #cursor-ring { width: 48px; height: 48px; opacity: 0; }
+
+/* ─── Typography ─── */
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; }
+
+/* ─── Grain overlay (applied to panels) ─── */
+.grain::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--tobacco); }
+
+/* ─── Focus ─── */
+:focus-visible { outline: 1px solid var(--brass); outline-offset: 3px; }
+::selection { background: var(--tobacco); color: var(--cream); }
+
+/* ─── Inputs ─── */
+input, select, textarea {
+  font-family: var(--sans);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(200,180,154,0.3);
+  color: var(--parchment);
+  font-size: 14px;
+  outline: none;
+  padding: 12px 0;
+  transition: border-color 0.3s;
+  width: 100%;
+  border-radius: 0;
+  letter-spacing: 0.04em;
+}
+input::placeholder { color: var(--tobacco); letter-spacing: 0.08em; font-size: 11px; text-transform: uppercase; }
+input:focus { border-bottom-color: var(--brass); }
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
