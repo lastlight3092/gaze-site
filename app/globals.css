@@ -33,35 +33,11 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  cursor: none;
 }
 
 body { min-height: 100vh; overflow-x: hidden; }
 
 /* ─── Custom cursor ─── */
-#cursor {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--brass);
-  position: fixed; top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s var(--ease-expo), width 0.3s var(--ease-expo), height 0.3s var(--ease-expo), opacity 0.3s;
-  mix-blend-mode: difference;
-}
-#cursor-ring {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(168,137,90,0.5);
-  position: fixed; top: 0; left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: transform 0.5s var(--ease-expo), width 0.4s var(--ease-expo), height 0.4s var(--ease-expo), opacity 0.4s;
-}
-.cursor-hover #cursor { width: 48px; height: 48px; opacity: 0.3; }
-.cursor-hover #cursor-ring { width: 48px; height: 48px; opacity: 0; }
 
 /* ─── Typography ─── */
 h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; }

@@ -32,7 +32,7 @@ export default function CartDrawer() {
             letterSpacing: "0.05em", color: "var(--parchment)" }}>Bag</span>
           <button onClick={closeCart} style={{
             background: "none", border: "none", color: "var(--tobacco)",
-            fontSize: 18, cursor: "none", padding: 4, lineHeight: 1,
+            fontSize: 18, padding: 4, lineHeight: 1,
             transition: "color 0.2s",
           }}
           onMouseEnter={e => (e.currentTarget.style.color = "var(--parchment)")}
@@ -53,7 +53,7 @@ export default function CartDrawer() {
                 background: "none", border: "1px solid rgba(168,137,90,0.3)",
                 color: "var(--tan)", padding: "12px 24px", fontSize: 10,
                 letterSpacing: "0.2em", textTransform: "uppercase",
-                cursor: "none", fontFamily: "var(--sans)", transition: "all 0.25s",
+                fontFamily: "var(--sans)", transition: "all 0.25s",
               }}>Browse</button>
             </div>
           ) : (
@@ -80,7 +80,7 @@ export default function CartDrawer() {
                       <button onClick={() => updateQty(item.key, -1)} style={{
                         width: 26, height: 26, background: "none",
                         border: "1px solid rgba(168,137,90,0.2)",
-                        color: "var(--parchment)", cursor: "none", fontSize: 14,
+                        color: "var(--parchment)", fontSize: 14,
                         display: "flex", alignItems: "center", justifyContent: "center",
                         borderRadius: 0, transition: "all 0.2s",
                       }}>−</button>
@@ -89,7 +89,7 @@ export default function CartDrawer() {
                       <button onClick={() => updateQty(item.key, 1)} style={{
                         width: 26, height: 26, background: "none",
                         border: "1px solid rgba(168,137,90,0.2)",
-                        color: "var(--parchment)", cursor: "none", fontSize: 14,
+                        color: "var(--parchment)", fontSize: 14,
                         display: "flex", alignItems: "center", justifyContent: "center",
                         borderRadius: 0, transition: "all 0.2s",
                       }}>+</button>
@@ -99,7 +99,7 @@ export default function CartDrawer() {
                   </div>
                   <button onClick={() => removeItem(item.key)} style={{
                     background: "none", border: "none", color: "rgba(107,79,53,0.5)",
-                    cursor: "none", fontSize: 10, letterSpacing: "0.14em",
+                    fontSize: 10, letterSpacing: "0.14em",
                     textTransform: "uppercase", padding: 0, marginTop: 10,
                     fontFamily: "var(--sans)", transition: "color 0.2s",
                   }}

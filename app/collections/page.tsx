@@ -47,7 +47,6 @@ export default function CollectionsPage() {
             gridTemplateColumns: "80px 1fr 1fr auto",
             alignItems: "center",
             gap: 40,
-            cursor: "none",
           }}>
             <div style={{ fontFamily: "var(--serif)", fontSize: 44, fontWeight: 400,
               color: "rgba(107,79,53,0.3)", lineHeight: 1 }}>

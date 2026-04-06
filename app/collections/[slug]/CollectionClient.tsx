@@ -33,7 +33,6 @@ export default function CollectionClient({ collection, initialProducts }: Props)
         .prod-item {
           border-bottom: 1px solid rgba(168,137,90,0.1);
           transition: background 0.35s var(--ease-expo);
-          cursor: none;
         }
         .prod-item:hover { background: rgba(61,46,30,0.3); }
         .prod-item:hover .prod-reveal { opacity: 1; transform: translateX(0); }
@@ -50,7 +49,6 @@ export default function CollectionClient({ collection, initialProducts }: Props)
           font-size: 10px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          cursor: none;
           font-family: var(--sans);
           transition: all 0.25s;
           border-radius: 0;
@@ -116,7 +114,7 @@ export default function CollectionClient({ collection, initialProducts }: Props)
           <select value={sort} onChange={e => setSort(e.target.value)}
             style={{ background: "transparent", border: "1px solid rgba(168,137,90,0.2)",
               color: "var(--tan)", padding: "7px 28px 7px 12px", fontSize: 10,
-              letterSpacing: "0.12em", textTransform: "uppercase", cursor: "none",
+              letterSpacing: "0.12em", textTransform: "uppercase",
               fontFamily: "var(--sans)", appearance: "none",
               backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='8' height='5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%236b4f35' stroke-width='1'/%3E%3C/svg%3E\")",
               backgroundRepeat: "no-repeat", backgroundPosition: "right 10px center",

@@ -47,7 +47,7 @@ export default function AccountPage() {
             marginRight: 40,
             fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase",
             color: tab === t.id ? "var(--parchment)" : "var(--tobacco)",
-            cursor: "none", fontFamily: "var(--sans)", fontWeight: 300,
+            fontFamily: "var(--sans)", fontWeight: 300,
             borderBottom: `1px solid ${tab === t.id ? "var(--brass)" : "transparent"}`,
             transition: "color 0.25s, border-color 0.25s",
             marginBottom: -1,
@@ -110,7 +110,7 @@ export default function AccountPage() {
             ))}
             <button onClick={() => setTab("orders")} style={{
               background: "none", border: "none", color: "var(--brass)",
-              cursor: "none", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase",
+              fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase",
               fontFamily: "var(--sans)", marginTop: 20, padding: 0,
               display: "flex", alignItems: "center", gap: 12,
             }}>
@@ -163,7 +163,7 @@ export default function AccountPage() {
             </div>
             <button style={{ background: "none", border: "1px solid rgba(168,137,90,0.2)",
               color: "var(--tan)", padding: "10px 24px", fontSize: 10,
-              letterSpacing: "0.18em", textTransform: "uppercase", cursor: "none",
+              letterSpacing: "0.18em", textTransform: "uppercase",
               fontFamily: "var(--sans)" }}>
               Add address
             </button>
@@ -179,7 +179,7 @@ export default function AccountPage() {
                 style={{ textDecoration: "none", display: "block" }}>
                 <div style={{ display: "grid", gridTemplateColumns: "80px 1fr auto",
                   gap: 28, padding: "24px 0", borderBottom: "1px solid rgba(168,137,90,0.06)",
-                  alignItems: "center", cursor: "none",
+                  alignItems: "center",
                   transition: "background 0.25s",
                 }} className="wishlist-row">
                   <div style={{ width: 80, height: 100,
@@ -225,7 +225,7 @@ export default function AccountPage() {
               <button style={{
                 background: "var(--parchment)", color: "var(--ink)", border: "none",
                 padding: "14px 32px", fontSize: 11, letterSpacing: "0.22em",
-                textTransform: "uppercase", cursor: "none", fontFamily: "var(--sans)",
+                textTransform: "uppercase", fontFamily: "var(--sans)",
                 fontWeight: 400, alignSelf: "flex-start", marginTop: 8,
               }}>Save changes</button>
             </div>

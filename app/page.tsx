@@ -427,7 +427,6 @@ export default function Home() {
                   display: "flex",
                   flexDirection: "column",
                   gap: 0,
-                  cursor: "none",
                   transition: "background 0.4s var(--ease-expo)",
                   minHeight: 200,
                 }}>

@@ -41,7 +41,6 @@ export default function ProductClient({ product }: { product: Product }) {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          cursor: none;
           color: var(--parchment);
           font-family: var(--sans);
           font-size: 11px;
@@ -70,7 +69,6 @@ export default function ProductClient({ product }: { product: Product }) {
           padding: 12px 6px;
           font-size: 12px;
           letter-spacing: 0.1em;
-          cursor: none;
           transition: all 0.25s;
           font-family: var(--sans);
           border-radius: 0;
@@ -81,7 +79,6 @@ export default function ProductClient({ product }: { product: Product }) {
         .swatch {
           width: 24px; height: 24px;
           border-radius: 50%;
-          cursor: none;
           border: 2px solid transparent;
           outline: 1px solid rgba(168,137,90,0.2);
           outline-offset: 3px;
@@ -97,7 +94,6 @@ export default function ProductClient({ product }: { product: Product }) {
           font-size: 11px;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          cursor: none;
           font-family: var(--sans);
           font-weight: 400;
           transition: all 0.3s var(--ease-expo);
@@ -161,7 +157,6 @@ export default function ProductClient({ product }: { product: Product }) {
                 width: 48, height: 60,
                 background: i === 0 ? "rgba(168,137,90,0.15)" : "rgba(61,46,30,0.4)",
                 border: `1px solid ${i === 0 ? "var(--brass)" : "rgba(168,137,90,0.15)"}`,
-                cursor: "none",
               }} />
             ))}
           </div>

@@ -49,7 +49,6 @@ export default async function ProductPage({ params }: Props) {
                   background: "var(--espresso)",
                   padding: "40px 32px 32px",
                   transition: "background 0.35s var(--ease-expo)",
-                  cursor: "none",
                 }}>
                   <div style={{ width: "100%", aspectRatio: "3/4",
                     background: "linear-gradient(145deg, var(--walnut), var(--ink))",

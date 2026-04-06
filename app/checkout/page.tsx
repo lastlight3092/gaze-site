@@ -29,12 +29,12 @@ export default function CheckoutPage() {
         .co-input { border-bottom: 1px solid rgba(168,137,90,0.2); background: transparent; }
         .co-input:focus { border-bottom-color: var(--brass); }
         .ship-opt { border: 1px solid rgba(168,137,90,0.15); padding: 18px 20px;
-          cursor: none; transition: border-color 0.25s; margin-bottom: 8px;
+          transition: border-color 0.25s; margin-bottom: 8px;
           display: flex; justify-content: space-between; align-items: center; }
         .ship-opt.active { border-color: var(--brass); }
         .next-btn { width: 100%; padding: 18px; background: var(--parchment); color: var(--ink);
           border: none; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-          cursor: none; font-family: var(--sans); font-weight: 400; transition: background 0.25s;
+          font-family: var(--sans); font-weight: 400; transition: background 0.25s;
           margin-top: 32px; }
         .next-btn:hover { background: var(--cream); }
       `}</style>

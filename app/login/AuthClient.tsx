@@ -83,7 +83,7 @@ export default function AuthClient({ mode }: { mode: "login" | "signup" }) {
             </div>
             {mode === "login" && (
               <div style={{ textAlign: "right", marginBottom: 28 }}>
-                <span style={{ fontSize: 11, color: "rgba(107,79,53,0.6)", cursor: "none",
+                <span style={{ fontSize: 11, color: "rgba(107,79,53,0.6)",
                   letterSpacing: "0.08em", fontFamily: "var(--sans)" }}>Forgot password?</span>
               </div>
             )}
@@ -96,7 +96,7 @@ export default function AuthClient({ mode }: { mode: "login" | "signup" }) {
             <button type="submit" disabled={loading} style={{
               width: "100%", padding: "16px", background: "var(--parchment)",
               color: "var(--ink)", border: "none", fontSize: 11, letterSpacing: "0.22em",
-              textTransform: "uppercase", cursor: "none", fontFamily: "var(--sans)",
+              textTransform: "uppercase", fontFamily: "var(--sans)",
               fontWeight: 400, transition: "background 0.25s", opacity: loading ? 0.6 : 1,
               marginBottom: 24,
             }}>

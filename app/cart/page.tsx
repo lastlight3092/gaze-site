@@ -57,7 +57,7 @@ export default function CartPage() {
                         <button key={di} onClick={() => updateQty(item.key, d)} style={{
                           width: 30, height: 30, background: "none",
                           border: "1px solid rgba(168,137,90,0.2)",
-                          color: "var(--parchment)", cursor: "none", fontSize: 16,
+                          color: "var(--parchment)", fontSize: 16,
                           display: "flex", alignItems: "center", justifyContent: "center",
                           borderRadius: 0,
                         }}>{d === -1 ? "−" : "+"}</button>
@@ -72,7 +72,7 @@ export default function CartPage() {
                       color: "var(--linen)", marginBottom: 12 }}>SGD {item.price * item.qty}</div>
                     <button onClick={() => removeItem(item.key)} style={{
                       background: "none", border: "none", color: "rgba(107,79,53,0.5)",
-                      cursor: "none", fontSize: 10, letterSpacing: "0.14em",
+                      fontSize: 10, letterSpacing: "0.14em",
                       textTransform: "uppercase", fontFamily: "var(--sans)",
                     }}>Remove</button>
                   </div>
