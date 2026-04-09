@@ -17,7 +17,7 @@
   --accent-dim: #886925;
   --action-gold: #b69345;
   --action-gold-deep: #8f6b24;
-  --action-ink: #18130b;
+  --action-ink: #f8f6f3;
   --action-glow: rgba(166, 127, 42, 0.22);
 
   /* ── Borders ── */
@@ -58,9 +58,9 @@ html {
   background-color: var(--bg);
   /* Bone paper base with barely-there sand dune silhouettes */
   background-image:
-    radial-gradient(120% 24% at 14% 118%, rgba(203, 190, 166, 0.22) 0 32%, transparent 33%),
-    radial-gradient(104% 22% at 86% 112%, rgba(194, 180, 154, 0.18) 0 30%, transparent 31%),
-    radial-gradient(88% 18% at 52% 108%, rgba(214, 203, 181, 0.14) 0 28%, transparent 29%),
+    radial-gradient(128% 26% at 12% 118%, rgba(201, 187, 161, 0.3) 0 32%, transparent 33%),
+    radial-gradient(112% 22% at 88% 113%, rgba(190, 175, 149, 0.24) 0 29%, transparent 30%),
+    radial-gradient(94% 19% at 48% 109%, rgba(214, 201, 177, 0.2) 0 26%, transparent 27%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.025'/%3E%3C/svg%3E");
   background-size: 100% 100%, 100% 100%, 100% 100%, 300px 300px;
   color: var(--text-primary);
@@ -75,7 +75,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 18%, transparent 82%, rgba(214, 202, 179, 0.06) 100%);
+    radial-gradient(115% 24% at -6% 102%, rgba(203, 187, 160, 0.24) 0 28%, transparent 29%),
+    radial-gradient(96% 18% at 106% 100%, rgba(194, 178, 150, 0.18) 0 24%, transparent 25%),
+    radial-gradient(88% 14% at 54% 103%, rgba(221, 211, 192, 0.12) 0 18%, transparent 19%),
+    linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 20%, transparent 82%, rgba(214, 202, 179, 0.08) 100%);
 }
 
 /* ─── Typography ─── */

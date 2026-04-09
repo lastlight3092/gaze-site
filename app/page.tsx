@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 import Link from "next/link";
 
 /* ─── Cinematic colour-field panels simulating photographic stills ─── */
@@ -14,6 +14,8 @@ const PANELS = [
     cta: null,
     align: "center",
     textY: "center",
+    zen:
+      "radial-gradient(circle at 24% 34%, rgba(92, 79, 57, 0.1) 0 3px, transparent 4px), radial-gradient(circle at 73% 66%, rgba(108, 93, 66, 0.08) 0 2px, transparent 3px), repeating-radial-gradient(circle at 24% 34%, rgba(164, 146, 112, 0.055) 0 1px, transparent 1px 15px), repeating-radial-gradient(circle at 73% 66%, rgba(156, 138, 106, 0.05) 0 1px, transparent 1px 19px), radial-gradient(ellipse at 18% 28%, rgba(232, 223, 206, 0.62) 0 16%, transparent 17%), radial-gradient(ellipse at 78% 70%, rgba(231, 220, 204, 0.54) 0 13%, transparent 14%)",
   },
   {
     id: "statement",
@@ -25,6 +27,8 @@ const PANELS = [
     cta: null,
     align: "left",
     textY: "bottom",
+    zen:
+      "radial-gradient(circle at 68% 26%, rgba(96, 82, 59, 0.1) 0 3px, transparent 4px), radial-gradient(circle at 29% 74%, rgba(115, 99, 71, 0.08) 0 2px, transparent 3px), repeating-radial-gradient(circle at 68% 26%, rgba(161, 143, 109, 0.06) 0 1px, transparent 1px 14px), repeating-radial-gradient(circle at 29% 74%, rgba(150, 132, 101, 0.05) 0 1px, transparent 1px 17px), radial-gradient(ellipse at 72% 24%, rgba(233, 225, 209, 0.58) 0 15%, transparent 16%), radial-gradient(ellipse at 24% 78%, rgba(227, 218, 201, 0.5) 0 12%, transparent 13%)",
   },
   {
     id: "core",
@@ -36,6 +40,8 @@ const PANELS = [
     cta: { label: "Enter Core", href: "/collections/core" },
     align: "right",
     textY: "center",
+    zen:
+      "radial-gradient(circle at 18% 62%, rgba(92, 79, 56, 0.11) 0 3px, transparent 4px), radial-gradient(circle at 82% 26%, rgba(111, 96, 71, 0.08) 0 2px, transparent 3px), repeating-radial-gradient(circle at 18% 62%, rgba(161, 144, 111, 0.062) 0 1px, transparent 1px 15px), repeating-radial-gradient(circle at 82% 26%, rgba(149, 132, 99, 0.05) 0 1px, transparent 1px 18px), radial-gradient(ellipse at 14% 68%, rgba(231, 223, 208, 0.56) 0 15%, transparent 16%), radial-gradient(ellipse at 86% 22%, rgba(228, 218, 200, 0.48) 0 11%, transparent 12%)",
   },
   {
     id: "after-dark",
@@ -47,6 +53,8 @@ const PANELS = [
     cta: { label: "Enter After Dark", href: "/collections/after-dark" },
     align: "left",
     textY: "center",
+    zen:
+      "radial-gradient(circle at 77% 58%, rgba(93, 80, 56, 0.12) 0 3px, transparent 4px), radial-gradient(circle at 20% 22%, rgba(107, 93, 66, 0.08) 0 2px, transparent 3px), repeating-radial-gradient(circle at 77% 58%, rgba(156, 139, 106, 0.06) 0 1px, transparent 1px 13px), repeating-radial-gradient(circle at 20% 22%, rgba(147, 129, 98, 0.05) 0 1px, transparent 1px 18px), radial-gradient(ellipse at 80% 62%, rgba(229, 220, 203, 0.58) 0 14%, transparent 15%), radial-gradient(ellipse at 18% 18%, rgba(236, 228, 213, 0.48) 0 12%, transparent 13%)",
   },
   {
     id: "resort",
@@ -58,6 +66,8 @@ const PANELS = [
     cta: { label: "Enter Resort", href: "/collections/resort" },
     align: "right",
     textY: "bottom",
+    zen:
+      "radial-gradient(circle at 28% 30%, rgba(99, 86, 61, 0.11) 0 3px, transparent 4px), radial-gradient(circle at 70% 74%, rgba(116, 102, 73, 0.08) 0 2px, transparent 3px), repeating-radial-gradient(circle at 28% 30%, rgba(162, 146, 113, 0.058) 0 1px, transparent 1px 14px), repeating-radial-gradient(circle at 70% 74%, rgba(151, 134, 101, 0.05) 0 1px, transparent 1px 17px), radial-gradient(ellipse at 24% 26%, rgba(233, 225, 209, 0.58) 0 16%, transparent 17%), radial-gradient(ellipse at 74% 78%, rgba(227, 218, 201, 0.5) 0 12%, transparent 13%)",
   },
   {
     id: "vault",
@@ -69,6 +79,8 @@ const PANELS = [
     cta: { label: "Enter Vault", href: "/collections/vault" },
     align: "center",
     textY: "center",
+    zen:
+      "radial-gradient(circle at 34% 22%, rgba(95, 81, 58, 0.1) 0 3px, transparent 4px), radial-gradient(circle at 65% 72%, rgba(110, 95, 70, 0.08) 0 2px, transparent 3px), repeating-radial-gradient(circle at 34% 22%, rgba(160, 143, 110, 0.058) 0 1px, transparent 1px 16px), repeating-radial-gradient(circle at 65% 72%, rgba(152, 134, 102, 0.05) 0 1px, transparent 1px 19px), radial-gradient(ellipse at 30% 18%, rgba(235, 226, 210, 0.6) 0 15%, transparent 16%), radial-gradient(ellipse at 68% 76%, rgba(228, 219, 203, 0.48) 0 12%, transparent 13%)",
   },
 ];
 
@@ -79,6 +91,7 @@ export default function Home() {
   useEffect(() => {
     const panels = document.querySelectorAll(".editorial-panel");
     const texts  = document.querySelectorAll(".panel-text-block");
+    const ctas = document.querySelectorAll(".panel-cta");
 
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -90,6 +103,7 @@ export default function Home() {
 
     panels.forEach(p => obs.observe(p));
     texts.forEach(t => obs.observe(t));
+    ctas.forEach(c => obs.observe(c));
     return () => obs.disconnect();
   }, []);
 
@@ -109,14 +123,8 @@ export default function Home() {
           content: '';
           position: absolute;
           inset: -8%;
-          background:
-            radial-gradient(circle at 18% 26%, rgba(102, 88, 63, 0.12) 0 3px, transparent 4px),
-            radial-gradient(circle at 74% 66%, rgba(94, 81, 58, 0.1) 0 2px, transparent 3px),
-            repeating-radial-gradient(circle at 18% 26%, rgba(160, 142, 108, 0.065) 0 1px, transparent 1px 14px),
-            repeating-radial-gradient(circle at 74% 66%, rgba(160, 142, 108, 0.055) 0 1px, transparent 1px 16px),
-            radial-gradient(ellipse at 22% 28%, rgba(231, 223, 207, 0.65) 0 16%, transparent 17%),
-            radial-gradient(ellipse at 76% 68%, rgba(229, 220, 204, 0.58) 0 14%, transparent 15%);
-          opacity: 0.36;
+          background: var(--panel-zen);
+          opacity: 0.34;
           mix-blend-mode: multiply;
           pointer-events: none;
           z-index: 0;
@@ -182,12 +190,12 @@ export default function Home() {
           font-weight: 400;
           margin-top: 36px;
           opacity: 0;
-          transform: translateX(-8px);
-          transition: opacity 0.8s 0.6s var(--ease-expo), transform 0.8s 0.6s var(--ease-expo), color 0.3s;
+          transform: translateX(-14px) translateY(6px);
+          transition: opacity 0.85s 0.4s var(--ease-expo), transform 0.85s 0.4s var(--ease-expo), color 0.3s;
         }
-        .panel-text-block.panel-visible .panel-cta {
+        .panel-cta.panel-visible {
           opacity: 1;
-          transform: translateX(0);
+          transform: translateX(0) translateY(0);
         }
         .panel-cta::after {
           content: '';
@@ -290,7 +298,7 @@ export default function Home() {
             <section
               key={panel.id}
               className="editorial-panel"
-              style={{ background: panel.bg }}
+              style={{ background: panel.bg, "--panel-zen": panel.zen } as CSSProperties}
             >
               {/* Accent light */}
               <div aria-hidden style={{

@@ -16,6 +16,14 @@ export default function CartDrawer() {
           color: var(--action-ink) !important;
           box-shadow: 0 14px 32px var(--action-glow);
         }
+        .drawer-secondary-link {
+          transition: background 0.28s var(--ease-expo), border-color 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
+        }
+        .drawer-secondary-link:hover {
+          background: var(--surface-alt) !important;
+          border-color: var(--accent) !important;
+          color: var(--text-primary) !important;
+        }
       `}</style>
       <div onClick={closeCart} style={{
         position: "fixed", inset: 0, background: "rgba(14,10,6,0.75)",
@@ -145,7 +153,7 @@ export default function CartDrawer() {
               fontFamily: "var(--sans)", fontWeight: 400,
               transition: "background 0.25s", marginBottom: 8,
             }}>Checkout</Link>
-            <Link href="/cart" onClick={closeCart} style={{
+            <Link href="/cart" onClick={closeCart} className="drawer-secondary-link" style={{
               display: "flex", alignItems: "center", justifyContent: "center",
               background: "transparent", color: "var(--text-secondary)",
               border: "1px solid var(--border)",
