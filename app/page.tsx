@@ -69,7 +69,7 @@ const PANELS = [
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const homepageSand =
-    "url(\"data:image/svg+xml,%3Csvg width='1600' height='720' viewBox='0 0 1600 720' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.75' stroke='%23cbbda8' stroke-width='1'%3E%3Cpath d='M-80 86C72 58 178 52 330 76C482 100 612 138 772 130C932 122 1040 78 1198 68C1356 58 1490 80 1680 112'/%3E%3Cpath d='M-120 148C62 120 180 114 344 140C508 166 640 204 804 198C968 192 1088 144 1248 132C1408 120 1536 140 1718 176'/%3E%3Cpath d='M-96 226C74 202 192 198 354 224C516 250 634 288 800 286C966 284 1086 238 1242 224C1398 210 1516 230 1694 264'/%3E%3Cpath d='M-110 320C60 300 184 300 352 324C520 348 648 386 820 386C992 386 1102 340 1266 328C1430 316 1548 332 1732 364'/%3E%3Cpath d='M-88 420C86 398 208 398 380 422C552 446 676 486 846 486C1016 486 1128 442 1294 428C1460 414 1574 430 1754 462'/%3E%3Cpath d='M-118 520C52 500 184 500 362 522C540 544 666 584 838 586C1010 588 1124 546 1288 532C1452 518 1578 536 1760 568'/%3E%3Cpath d='M-102 620C68 602 198 604 376 626C554 648 680 688 854 690C1028 692 1142 652 1308 638C1474 624 1594 640 1778 670'/%3E%3C/g%3E%3Cg opacity='0.42' stroke='white' stroke-width='1'%3E%3Cpath d='M-60 100C82 76 190 72 336 94C482 116 614 154 770 148C926 142 1046 98 1206 90C1366 82 1498 102 1666 132'/%3E%3Cpath d='M-84 334C90 314 210 314 376 338C542 362 664 402 834 402C1004 402 1116 358 1280 344C1444 330 1560 346 1740 378'/%3E%3Cpath d='M-72 536C100 518 224 520 394 542C564 564 688 604 860 606C1032 608 1146 568 1312 554C1478 540 1594 556 1774 586'/%3E%3C/g%3E%3C/svg%3E\")";
+    "url(\"data:image/svg+xml,%3Csvg width='1600' height='780' viewBox='0 0 1600 780' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.52' stroke='%23d7ccbb' stroke-width='1'%3E%3Cpath d='M-90 102C74 78 192 72 352 94C512 116 638 150 798 146C958 142 1078 100 1236 92C1394 84 1514 102 1698 134'/%3E%3Cpath d='M-124 180C56 156 180 154 348 178C516 202 648 238 816 236C984 234 1106 190 1268 180C1430 170 1552 188 1732 222'/%3E%3Cpath d='M-104 276C74 254 202 252 374 276C546 300 674 338 844 338C1014 338 1128 294 1290 282C1452 270 1574 288 1756 320'/%3E%3Cpath d='M-118 392C60 372 192 372 368 396C544 420 676 458 850 460C1024 462 1138 420 1302 406C1466 392 1588 410 1770 442'/%3E%3Cpath d='M-96 514C82 494 212 494 392 516C572 538 700 578 876 580C1052 582 1164 540 1330 526C1496 512 1612 530 1792 562'/%3E%3Cpath d='M-118 642C60 624 194 626 376 648C558 670 688 710 866 714C1044 718 1158 678 1326 664C1494 650 1616 666 1800 698'/%3E%3C/g%3E%3Cg opacity='0.18' stroke='white' stroke-width='1'%3E%3Cpath d='M-70 126C92 104 206 100 362 122C518 144 642 178 800 174C958 170 1080 130 1238 122C1396 114 1518 132 1686 162'/%3E%3Cpath d='M-92 418C88 398 218 398 394 422C570 446 698 484 870 486C1042 488 1156 448 1320 434C1484 420 1600 438 1778 470'/%3E%3C/g%3E%3C/svg%3E\")";
 
   /* Intersection Observer — fade panels in as they enter viewport */
   useEffect(() => {
@@ -106,9 +106,9 @@ export default function Home() {
           z-index: 0;
           background-image: ${homepageSand};
           background-repeat: repeat-y;
-          background-size: 100% 720px;
+          background-size: 100% 780px;
           background-position: center top;
-          opacity: 0.23;
+          opacity: 0.12;
         }
         .editorial-panel {
           position: relative;
@@ -124,6 +124,34 @@ export default function Home() {
           position: absolute; inset: 0;
           display: flex;
           flex-direction: column;
+        }
+        .panel-inner::before {
+          content: '';
+          position: absolute;
+          top: 10%;
+          bottom: 8%;
+          pointer-events: none;
+          z-index: 0;
+        }
+        .panel-inner > * {
+          position: relative;
+          z-index: 1;
+        }
+        .pos-left::before {
+          left: 4%;
+          width: min(50vw, 720px);
+          background: linear-gradient(90deg, rgba(248,246,243,0.98) 0%, rgba(248,246,243,0.94) 68%, rgba(248,246,243,0.45) 100%);
+        }
+        .pos-right::before {
+          right: 4%;
+          width: min(50vw, 720px);
+          background: linear-gradient(270deg, rgba(248,246,243,0.98) 0%, rgba(248,246,243,0.94) 68%, rgba(248,246,243,0.45) 100%);
+        }
+        .pos-center::before {
+          left: 50%;
+          transform: translateX(-50%);
+          width: min(62vw, 860px);
+          background: linear-gradient(90deg, rgba(248,246,243,0) 0%, rgba(248,246,243,0.95) 18%, rgba(248,246,243,0.98) 50%, rgba(248,246,243,0.95) 82%, rgba(248,246,243,0) 100%);
         }
         /* Reveal animations */
         .panel-text-block {
