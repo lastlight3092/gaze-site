@@ -40,9 +40,7 @@ export default function Header() {
             textDecoration: "none",
           }}
         >
-          G<span style={{ color: "var(--brass)" }}>·</span>A
-          <span style={{ color: "var(--brass)" }}>·</span>Z
-          <span style={{ color: "var(--brass)" }}>·</span>E
+          GAZE
         </Link>
 
         {/* Desktop Nav */}
