@@ -37,10 +37,18 @@ const styles: Record<Variant, React.CSSProperties> = {
 };
 
 const hoverStyles: Record<Variant, React.CSSProperties> = {
-  primary: { background: "var(--accent)", color: "var(--bg)" },
+  primary: {
+    background: "linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%)",
+    color: "var(--action-ink)",
+    boxShadow: "0 14px 32px var(--action-glow)",
+  },
   outline: { borderColor: "var(--text-secondary)", background: "var(--surface-alt)", color: "var(--text-primary)" },
   ghost: { borderColor: "rgba(74,69,64,0.4)", background: "var(--surface)", color: "var(--text-primary)" },
-  brass: { background: "var(--accent-dim)", color: "var(--bg)" },
+  brass: {
+    background: "linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%)",
+    color: "var(--action-ink)",
+    boxShadow: "0 14px 32px var(--action-glow)",
+  },
   dark: { background: "var(--surface-alt)", color: "var(--text-primary)" },
 };
 
@@ -77,7 +85,7 @@ export default function Button({
         fontSize: 11,
         padding: "14px 32px",
         width: fullWidth ? "100%" : undefined,
-        transition: "all 0.25s",
+        transition: "all 0.28s var(--ease-expo)",
         borderRadius: 0,
         fontWeight: 400,
         ...styles[variant],

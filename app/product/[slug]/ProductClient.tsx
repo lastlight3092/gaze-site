@@ -102,8 +102,16 @@ export default function ProductClient({ product }: { product: Product }) {
           transition: all 0.3s var(--ease-expo);
           cursor: pointer;
         }
-        .atc-btn:hover { background: var(--accent); color: var(--bg); }
-        .atc-btn.added { background: var(--accent); color: var(--bg); }
+        .atc-btn:hover {
+          background: linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%);
+          color: var(--action-ink);
+          box-shadow: 0 16px 36px var(--action-glow);
+        }
+        .atc-btn.added {
+          background: linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%);
+          color: var(--action-ink);
+          box-shadow: 0 16px 36px var(--action-glow);
+        }
       `}</style>
 
       <div style={{

@@ -34,9 +34,14 @@ export default function CheckoutPage() {
         .ship-opt.active { border-color: var(--accent); }
         .next-btn { width: 100%; padding: 18px; background: var(--text-primary); color: var(--bg);
           border: none; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-          font-family: var(--sans); font-weight: 400; transition: background 0.25s;
+          font-family: var(--sans); font-weight: 400;
+          transition: background 0.28s var(--ease-expo), box-shadow 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
           margin-top: 32px; cursor: pointer; }
-        .next-btn:hover { background: var(--accent); color: var(--bg); }
+        .next-btn:hover {
+          background: linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%);
+          color: var(--action-ink);
+          box-shadow: 0 14px 32px var(--action-glow);
+        }
       `}</style>
 
       <div style={{ paddingTop: "64px", display: "grid", gridTemplateColumns: "1fr 400px",

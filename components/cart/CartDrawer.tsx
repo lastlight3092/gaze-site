@@ -7,6 +7,16 @@ export default function CartDrawer() {
 
   return (
     <>
+      <style>{`
+        .drawer-checkout-link {
+          transition: background 0.28s var(--ease-expo), box-shadow 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
+        }
+        .drawer-checkout-link:hover {
+          background: linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%) !important;
+          color: var(--action-ink) !important;
+          box-shadow: 0 14px 32px var(--action-glow);
+        }
+      `}</style>
       <div onClick={closeCart} style={{
         position: "fixed", inset: 0, background: "rgba(14,10,6,0.75)",
         zIndex: 490, opacity: isOpen ? 1 : 0, pointerEvents: isOpen ? "all" : "none",
@@ -127,7 +137,7 @@ export default function CartDrawer() {
               letterSpacing: "0.06em", fontFamily: "var(--sans)" }}>
               Shipping at checkout · Plain packaging
             </p>
-            <Link href="/checkout" onClick={closeCart} style={{
+            <Link href="/checkout" onClick={closeCart} className="drawer-checkout-link" style={{
               display: "flex", alignItems: "center", justifyContent: "center",
               background: "var(--text-primary)", color: "var(--bg)",
               padding: "16px", fontSize: 11, letterSpacing: "0.22em",

@@ -7,6 +7,16 @@ export default function CartPage() {
 
   return (
     <div style={{ paddingTop: "calc(64px + 60px)", minHeight: "100vh" }}>
+      <style>{`
+        .cart-checkout-link {
+          transition: background 0.28s var(--ease-expo), box-shadow 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
+        }
+        .cart-checkout-link:hover {
+          background: linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%) !important;
+          color: var(--action-ink) !important;
+          box-shadow: 0 14px 32px var(--action-glow);
+        }
+      `}</style>
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 48px 100px" }}>
         <div style={{ fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase",
           color: "var(--brass)", fontFamily: "var(--sans)", marginBottom: 20 }}>Your Bag</div>
@@ -102,7 +112,7 @@ export default function CartPage() {
                   fontFamily: "var(--sans)", fontWeight: 300 }}>
                   <span>Shipping</span><span>At checkout</span>
                 </div>
-                <Link href="/checkout" style={{
+                <Link href="/checkout" className="cart-checkout-link" style={{
                   display: "flex", alignItems: "center", justifyContent: "center",
                   background: "var(--text-primary)", color: "var(--bg)", padding: "16px",
                   fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase",

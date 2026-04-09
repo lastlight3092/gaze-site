@@ -13,8 +13,12 @@
   --text-muted:     #7a7570;   /* slightly darker muted */
 
   /* ── Accent ── */
-  --accent:     #b8896a;
-  --accent-dim: #9a7358;
+  --accent:     #a98534;
+  --accent-dim: #886925;
+  --action-gold: #b69345;
+  --action-gold-deep: #8f6b24;
+  --action-ink: #18130b;
+  --action-glow: rgba(166, 127, 42, 0.22);
 
   /* ── Borders ── */
   --border:       #d8d2cb;     /* slightly darker, more visible */
@@ -26,8 +30,8 @@
   --on-dark-muted:  rgba(242,238,233,0.38);
 
   /* ── Compatibility aliases (components use these names) ── */
-  --brass:      #b8896a;
-  --brass-dim:  #9a7358;
+  --brass:      #a98534;
+  --brass-dim:  #886925;
   --parchment:  #1e1c1a;
   --cream:      #f2efea;
   --linen:      #4a4540;
@@ -52,9 +56,13 @@
 html {
   font-family: var(--sans);
   background-color: var(--bg);
-  /* Subtle textured ivory/bone — very low opacity noise */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.025'/%3E%3C/svg%3E");
-  background-size: 300px 300px;
+  /* Bone paper base with barely-there sand dune silhouettes */
+  background-image:
+    radial-gradient(120% 24% at 14% 118%, rgba(203, 190, 166, 0.22) 0 32%, transparent 33%),
+    radial-gradient(104% 22% at 86% 112%, rgba(194, 180, 154, 0.18) 0 30%, transparent 31%),
+    radial-gradient(88% 18% at 52% 108%, rgba(214, 203, 181, 0.14) 0 28%, transparent 29%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.025'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 100% 100%, 100% 100%, 300px 300px;
   color: var(--text-primary);
   font-size: 16px;
   line-height: 1.6;
@@ -63,7 +71,12 @@ html {
   overflow-x: hidden;
 }
 
-body { min-height: 100vh; overflow-x: hidden; }
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 18%, transparent 82%, rgba(214, 202, 179, 0.06) 100%);
+}
 
 /* ─── Typography ─── */
 h1, h2, h3, h4 { font-family: var(--sans); font-weight: 300; letter-spacing: 0.01em; }

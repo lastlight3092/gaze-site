@@ -105,6 +105,22 @@ export default function Home() {
           display: flex;
           align-items: center;
         }
+        .editorial-panel::before {
+          content: '';
+          position: absolute;
+          inset: -8%;
+          background:
+            radial-gradient(circle at 18% 26%, rgba(102, 88, 63, 0.12) 0 3px, transparent 4px),
+            radial-gradient(circle at 74% 66%, rgba(94, 81, 58, 0.1) 0 2px, transparent 3px),
+            repeating-radial-gradient(circle at 18% 26%, rgba(160, 142, 108, 0.065) 0 1px, transparent 1px 14px),
+            repeating-radial-gradient(circle at 74% 66%, rgba(160, 142, 108, 0.055) 0 1px, transparent 1px 16px),
+            radial-gradient(ellipse at 22% 28%, rgba(231, 223, 207, 0.65) 0 16%, transparent 17%),
+            radial-gradient(ellipse at 76% 68%, rgba(229, 220, 204, 0.58) 0 14%, transparent 15%);
+          opacity: 0.36;
+          mix-blend-mode: multiply;
+          pointer-events: none;
+          z-index: 0;
+        }
         .panel-inner {
           position: absolute; inset: 0;
           display: flex;
@@ -176,11 +192,11 @@ export default function Home() {
         .panel-cta::after {
           content: '';
           width: 32px; height: 1px;
-          background: var(--accent);
+          background: var(--action-gold);
           transition: width 0.4s var(--ease-expo);
           display: block;
         }
-        .panel-cta:hover { color: var(--text-primary); }
+        .panel-cta:hover { color: var(--action-gold-deep); }
         .panel-cta:hover::after { width: 56px; }
 
         /* Opener special */
