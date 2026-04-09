@@ -136,7 +136,7 @@ export default function ProductClient({ product }: { product: Product }) {
           {/* Subtle vignette */}
           <div aria-hidden style={{
             position: "absolute", inset: 0, zIndex: 1,
-            background: "radial-gradient(ellipse at center, transparent 50%, rgba(30,28,26,0.06) 100%)",
+            background: "linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 24%, transparent 78%, rgba(30,28,26,0.05) 100%)",
           }} />
           {/* Large letter placeholder */}
           <div style={{ zIndex: 3, textAlign: "center", userSelect: "none" }}>

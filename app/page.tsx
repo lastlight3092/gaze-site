@@ -7,7 +7,7 @@ const PANELS = [
   {
     id: "opener",
     bg: "linear-gradient(168deg, #f0ece5 0%, #eae4db 35%, #ede8df 60%, #f2ece4 100%)",
-    accent: "radial-gradient(ellipse at 40% 40%, rgba(184,137,106,0.07) 0%, transparent 60%)",
+    accent: "linear-gradient(115deg, rgba(185,166,130,0.08) 0%, rgba(185,166,130,0.03) 32%, transparent 62%)",
     headline: null,
     sub: null,
     tag: "Bangkok · Est. 2024",
@@ -15,12 +15,12 @@ const PANELS = [
     align: "center",
     textY: "center",
     zen:
-      "repeating-radial-gradient(circle at 24% 34%, rgba(175, 159, 130, 0.04) 0 1px, transparent 1px 15px), repeating-radial-gradient(circle at 73% 66%, rgba(167, 150, 121, 0.035) 0 1px, transparent 1px 19px)",
+      "repeating-linear-gradient(7deg, rgba(174,157,128,0.028) 0 1px, transparent 1px 16px), repeating-linear-gradient(96deg, rgba(166,149,120,0.018) 0 1px, transparent 1px 22px)",
   },
   {
     id: "statement",
     bg: "linear-gradient(145deg, #edeae6 0%, #e8e4de 50%, #ece7e0 100%)",
-    accent: "radial-gradient(ellipse at 30% 60%, rgba(184,137,106,0.05) 0%, transparent 65%)",
+    accent: "linear-gradient(132deg, rgba(185,166,130,0.06) 0%, rgba(185,166,130,0.025) 28%, transparent 58%)",
     headline: "Worn close.\nFelt privately.",
     sub: null,
     tag: null,
@@ -28,12 +28,12 @@ const PANELS = [
     align: "left",
     textY: "bottom",
     zen:
-      "repeating-radial-gradient(circle at 68% 26%, rgba(171, 154, 124, 0.042) 0 1px, transparent 1px 14px), repeating-radial-gradient(circle at 29% 74%, rgba(160, 143, 111, 0.036) 0 1px, transparent 1px 17px)",
+      "repeating-linear-gradient(12deg, rgba(171,154,124,0.026) 0 1px, transparent 1px 15px), repeating-linear-gradient(103deg, rgba(160,143,111,0.018) 0 1px, transparent 1px 21px)",
   },
   {
     id: "core",
     bg: "linear-gradient(200deg, #ede7de 0%, #e8e2d8 40%, #ede6db 100%)",
-    accent: "radial-gradient(ellipse at 75% 40%, rgba(184,137,106,0.08) 0%, transparent 55%)",
+    accent: "linear-gradient(148deg, rgba(183,164,126,0.07) 0%, rgba(183,164,126,0.03) 26%, transparent 54%)",
     headline: "Core",
     sub: "The foundation. Supima Modal, cut precisely for the tropical day.",
     tag: "Collection 01",
@@ -41,12 +41,12 @@ const PANELS = [
     align: "right",
     textY: "center",
     zen:
-      "repeating-radial-gradient(circle at 18% 62%, rgba(171, 154, 124, 0.044) 0 1px, transparent 1px 15px), repeating-radial-gradient(circle at 82% 26%, rgba(158, 141, 109, 0.036) 0 1px, transparent 1px 18px)",
+      "repeating-linear-gradient(5deg, rgba(170,153,123,0.03) 0 1px, transparent 1px 14px), repeating-linear-gradient(92deg, rgba(158,141,109,0.018) 0 1px, transparent 1px 20px)",
   },
   {
     id: "after-dark",
     bg: "linear-gradient(160deg, #e8e6e2 0%, #e2dfd9 45%, #e6e2dd 100%)",
-    accent: "radial-gradient(ellipse at 20% 30%, rgba(140,120,100,0.08) 0%, transparent 60%)",
+    accent: "linear-gradient(124deg, rgba(173,156,122,0.065) 0%, rgba(173,156,122,0.025) 30%, transparent 58%)",
     headline: "After Dark",
     sub: "Japanese micro-voile. For evenings that begin with intention.",
     tag: "Collection 02",
@@ -54,12 +54,12 @@ const PANELS = [
     align: "left",
     textY: "center",
     zen:
-      "repeating-radial-gradient(circle at 77% 58%, rgba(168, 151, 120, 0.042) 0 1px, transparent 1px 13px), repeating-radial-gradient(circle at 20% 22%, rgba(158, 141, 109, 0.035) 0 1px, transparent 1px 18px)",
+      "repeating-linear-gradient(9deg, rgba(168,151,120,0.028) 0 1px, transparent 1px 13px), repeating-linear-gradient(101deg, rgba(158,141,109,0.018) 0 1px, transparent 1px 21px)",
   },
   {
     id: "resort",
     bg: "linear-gradient(135deg, #ece9e3 0%, #e6e2db 50%, #eae5de 100%)",
-    accent: "radial-gradient(ellipse at 60% 70%, rgba(154,125,95,0.07) 0%, transparent 60%)",
+    accent: "linear-gradient(138deg, rgba(181,163,127,0.06) 0%, rgba(181,163,127,0.024) 29%, transparent 56%)",
     headline: "Resort",
     sub: "ECONYL® recycled nylon. Made for the ocean. Returned to it.",
     tag: "Collection 03",
@@ -67,12 +67,12 @@ const PANELS = [
     align: "right",
     textY: "bottom",
     zen:
-      "repeating-radial-gradient(circle at 28% 30%, rgba(172, 156, 126, 0.04) 0 1px, transparent 1px 14px), repeating-radial-gradient(circle at 70% 74%, rgba(160, 143, 112, 0.035) 0 1px, transparent 1px 17px)",
+      "repeating-linear-gradient(11deg, rgba(172,156,126,0.026) 0 1px, transparent 1px 14px), repeating-linear-gradient(98deg, rgba(160,143,112,0.017) 0 1px, transparent 1px 20px)",
   },
   {
     id: "vault",
     bg: "linear-gradient(170deg, #e8e5e0 0%, #e2dfda 60%, #e6e2dc 100%)",
-    accent: "radial-gradient(ellipse at 50% 50%, rgba(184,137,106,0.05) 0%, transparent 70%)",
+    accent: "linear-gradient(142deg, rgba(179,160,124,0.06) 0%, rgba(179,160,124,0.022) 34%, transparent 62%)",
     headline: "Vault",
     sub: "Numbered editions. Rare compositions. Not restocked.",
     tag: "Collection 04",
@@ -80,7 +80,7 @@ const PANELS = [
     align: "center",
     textY: "center",
     zen:
-      "repeating-radial-gradient(circle at 34% 22%, rgba(170, 153, 123, 0.04) 0 1px, transparent 1px 16px), repeating-radial-gradient(circle at 65% 72%, rgba(160, 143, 112, 0.034) 0 1px, transparent 1px 19px)",
+      "repeating-linear-gradient(6deg, rgba(170,153,123,0.025) 0 1px, transparent 1px 16px), repeating-linear-gradient(95deg, rgba(160,143,112,0.016) 0 1px, transparent 1px 22px)",
   },
 ];
 
@@ -310,7 +310,7 @@ export default function Home() {
               {/* Vignette */}
               <div aria-hidden style={{
                 position: "absolute", inset: 0,
-                background: "radial-gradient(ellipse at center, transparent 50%, rgba(30,28,26,0.05) 100%)",
+                background: "linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 22%, transparent 78%, rgba(30,28,26,0.04) 100%)",
                 zIndex: 2,
               }} />
 

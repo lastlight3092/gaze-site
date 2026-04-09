@@ -26,7 +26,7 @@ export default function AuthClient({ mode }: { mode: "login" | "signup" }) {
           backgroundImage: "repeating-linear-gradient(45deg, rgba(30,28,26,0.5) 0, rgba(30,28,26,0.5) 1px, transparent 0, transparent 50%)",
           backgroundSize: "28px 28px" }} />
         <div aria-hidden style={{ position: "absolute", inset: 0,
-          background: "radial-gradient(ellipse at 30% 60%, rgba(107,79,53,0.2) 0%, transparent 65%)" }} />
+          background: "linear-gradient(140deg, rgba(107,79,53,0.12) 0%, rgba(107,79,53,0.05) 30%, transparent 60%)" }} />
         <div style={{ position: "relative", zIndex: 1 }}>
           <blockquote style={{ fontFamily: "var(--serif)", fontSize: "clamp(24px,3vw,44px)",
             fontWeight: 400, lineHeight: 1.2, color: "rgba(242,238,233,0.92)", fontStyle: "italic",
