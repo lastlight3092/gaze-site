@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        serif:  ["Playfair Display", "Georgia", "serif"],
-        sans:   ["DM Sans", "system-ui", "sans-serif"],
+        serif:  ["Satoshi", "system-ui", "sans-serif"],
+        sans:   ["Satoshi", "system-ui", "sans-serif"],
       },
       colors: {
         ink:       "#1a1510",
