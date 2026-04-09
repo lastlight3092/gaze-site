@@ -35,12 +35,11 @@ export default function CheckoutPage() {
         .next-btn { width: 100%; padding: 18px; background: var(--text-primary); color: var(--bg);
           border: none; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
           font-family: var(--sans); font-weight: 400;
-          transition: background 0.28s var(--ease-expo), box-shadow 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
+          transition: background 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
           margin-top: 32px; cursor: pointer; }
         .next-btn:hover {
           background: linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%);
           color: var(--action-ink);
-          box-shadow: 0 14px 32px var(--action-glow);
         }
       `}</style>
 

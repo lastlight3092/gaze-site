@@ -9,12 +9,11 @@ export default function CartDrawer() {
     <>
       <style>{`
         .drawer-checkout-link {
-          transition: background 0.28s var(--ease-expo), box-shadow 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
+          transition: background 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
         }
         .drawer-checkout-link:hover {
           background: linear-gradient(135deg, var(--action-gold) 0%, var(--action-gold-deep) 100%) !important;
           color: var(--action-ink) !important;
-          box-shadow: 0 14px 32px var(--action-glow);
         }
         .drawer-secondary-link {
           transition: background 0.28s var(--ease-expo), border-color 0.28s var(--ease-expo), color 0.28s var(--ease-expo);
