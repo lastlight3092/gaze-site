@@ -34,7 +34,7 @@ export default function Header() {
           style={{
             fontFamily: "var(--serif)",
             fontSize: 26,
-            fontWeight: 300,
+            fontWeight: 500,
             letterSpacing: "0.22em",
             color: "var(--text-primary)",
             textDecoration: "none",

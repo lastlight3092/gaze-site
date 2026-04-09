@@ -187,7 +187,7 @@ export default function Home() {
         .opener-logo {
           font-family: var(--sans);
           font-size: clamp(72px, 12vw, 160px);
-          font-weight: 300;
+          font-weight: 500;
           letter-spacing: 0.18em;
           color: var(--text-primary);
           text-transform: uppercase;
