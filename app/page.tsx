@@ -15,7 +15,7 @@ const PANELS = [
     align: "center",
     textY: "center",
     zen:
-      "repeating-radial-gradient(circle at 24% 34%, rgba(175, 159, 130, 0.04) 0 1px, transparent 1px 15px), repeating-radial-gradient(circle at 73% 66%, rgba(167, 150, 121, 0.035) 0 1px, transparent 1px 19px), radial-gradient(ellipse at 18% 28%, rgba(232, 223, 206, 0.56) 0 16%, transparent 17%), radial-gradient(ellipse at 78% 70%, rgba(231, 220, 204, 0.46) 0 13%, transparent 14%)",
+      "repeating-radial-gradient(circle at 24% 34%, rgba(175, 159, 130, 0.04) 0 1px, transparent 1px 15px), repeating-radial-gradient(circle at 73% 66%, rgba(167, 150, 121, 0.035) 0 1px, transparent 1px 19px)",
   },
   {
     id: "statement",
@@ -28,7 +28,7 @@ const PANELS = [
     align: "left",
     textY: "bottom",
     zen:
-      "repeating-radial-gradient(circle at 68% 26%, rgba(171, 154, 124, 0.042) 0 1px, transparent 1px 14px), repeating-radial-gradient(circle at 29% 74%, rgba(160, 143, 111, 0.036) 0 1px, transparent 1px 17px), radial-gradient(ellipse at 72% 24%, rgba(233, 225, 209, 0.54) 0 15%, transparent 16%), radial-gradient(ellipse at 24% 78%, rgba(227, 218, 201, 0.44) 0 12%, transparent 13%)",
+      "repeating-radial-gradient(circle at 68% 26%, rgba(171, 154, 124, 0.042) 0 1px, transparent 1px 14px), repeating-radial-gradient(circle at 29% 74%, rgba(160, 143, 111, 0.036) 0 1px, transparent 1px 17px)",
   },
   {
     id: "core",
@@ -41,7 +41,7 @@ const PANELS = [
     align: "right",
     textY: "center",
     zen:
-      "repeating-radial-gradient(circle at 18% 62%, rgba(171, 154, 124, 0.044) 0 1px, transparent 1px 15px), repeating-radial-gradient(circle at 82% 26%, rgba(158, 141, 109, 0.036) 0 1px, transparent 1px 18px), radial-gradient(ellipse at 14% 68%, rgba(231, 223, 208, 0.52) 0 15%, transparent 16%), radial-gradient(ellipse at 86% 22%, rgba(228, 218, 200, 0.42) 0 11%, transparent 12%)",
+      "repeating-radial-gradient(circle at 18% 62%, rgba(171, 154, 124, 0.044) 0 1px, transparent 1px 15px), repeating-radial-gradient(circle at 82% 26%, rgba(158, 141, 109, 0.036) 0 1px, transparent 1px 18px)",
   },
   {
     id: "after-dark",
@@ -54,7 +54,7 @@ const PANELS = [
     align: "left",
     textY: "center",
     zen:
-      "repeating-radial-gradient(circle at 77% 58%, rgba(168, 151, 120, 0.042) 0 1px, transparent 1px 13px), repeating-radial-gradient(circle at 20% 22%, rgba(158, 141, 109, 0.035) 0 1px, transparent 1px 18px), radial-gradient(ellipse at 80% 62%, rgba(229, 220, 203, 0.54) 0 14%, transparent 15%), radial-gradient(ellipse at 18% 18%, rgba(236, 228, 213, 0.42) 0 12%, transparent 13%)",
+      "repeating-radial-gradient(circle at 77% 58%, rgba(168, 151, 120, 0.042) 0 1px, transparent 1px 13px), repeating-radial-gradient(circle at 20% 22%, rgba(158, 141, 109, 0.035) 0 1px, transparent 1px 18px)",
   },
   {
     id: "resort",
@@ -67,7 +67,7 @@ const PANELS = [
     align: "right",
     textY: "bottom",
     zen:
-      "repeating-radial-gradient(circle at 28% 30%, rgba(172, 156, 126, 0.04) 0 1px, transparent 1px 14px), repeating-radial-gradient(circle at 70% 74%, rgba(160, 143, 112, 0.035) 0 1px, transparent 1px 17px), radial-gradient(ellipse at 24% 26%, rgba(233, 225, 209, 0.54) 0 16%, transparent 17%), radial-gradient(ellipse at 74% 78%, rgba(227, 218, 201, 0.44) 0 12%, transparent 13%)",
+      "repeating-radial-gradient(circle at 28% 30%, rgba(172, 156, 126, 0.04) 0 1px, transparent 1px 14px), repeating-radial-gradient(circle at 70% 74%, rgba(160, 143, 112, 0.035) 0 1px, transparent 1px 17px)",
   },
   {
     id: "vault",
@@ -80,7 +80,7 @@ const PANELS = [
     align: "center",
     textY: "center",
     zen:
-      "repeating-radial-gradient(circle at 34% 22%, rgba(170, 153, 123, 0.04) 0 1px, transparent 1px 16px), repeating-radial-gradient(circle at 65% 72%, rgba(160, 143, 112, 0.034) 0 1px, transparent 1px 19px), radial-gradient(ellipse at 30% 18%, rgba(235, 226, 210, 0.56) 0 15%, transparent 16%), radial-gradient(ellipse at 68% 76%, rgba(228, 219, 203, 0.42) 0 12%, transparent 13%)",
+      "repeating-radial-gradient(circle at 34% 22%, rgba(170, 153, 123, 0.04) 0 1px, transparent 1px 16px), repeating-radial-gradient(circle at 65% 72%, rgba(160, 143, 112, 0.034) 0 1px, transparent 1px 19px)",
   },
 ];
 

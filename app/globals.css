@@ -56,13 +56,8 @@
 html {
   font-family: var(--sans);
   background-color: var(--bg);
-  /* Bone paper base with barely-there sand dune silhouettes */
-  background-image:
-    radial-gradient(128% 26% at 12% 118%, rgba(214, 203, 183, 0.22) 0 32%, transparent 33%),
-    radial-gradient(112% 22% at 88% 113%, rgba(223, 212, 193, 0.18) 0 29%, transparent 30%),
-    radial-gradient(94% 19% at 48% 109%, rgba(232, 224, 209, 0.14) 0 26%, transparent 27%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.025'/%3E%3C/svg%3E");
-  background-size: 100% 100%, 100% 100%, 100% 100%, 300px 300px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.025'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
   color: var(--text-primary);
   font-size: 16px;
   line-height: 1.6;
@@ -74,11 +69,7 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background:
-    radial-gradient(115% 24% at -6% 102%, rgba(223, 213, 195, 0.16) 0 28%, transparent 29%),
-    radial-gradient(96% 18% at 106% 100%, rgba(229, 220, 204, 0.12) 0 24%, transparent 25%),
-    radial-gradient(88% 14% at 54% 103%, rgba(238, 232, 219, 0.1) 0 18%, transparent 19%),
-    linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 20%, transparent 82%, rgba(214, 202, 179, 0.08) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 20%, transparent 82%, rgba(214, 202, 179, 0.05) 100%);
 }
 
 /* ─── Typography ─── */
