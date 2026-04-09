@@ -17,16 +17,16 @@ export default function CartPage() {
 
         {items.length === 0 ? (
           <div>
-            <p style={{ fontSize: 14, color: "var(--tan)", fontFamily: "var(--sans)", fontWeight: 300,
+            <p style={{ fontSize: 14, color: "var(--text-secondary)", fontFamily: "var(--sans)", fontWeight: 300,
               lineHeight: 1.8, marginBottom: 40 }}>
               Browse the collections to find something precisely right.
             </p>
             <Link href="/collections" style={{
               display: "inline-flex", alignItems: "center", gap: 12,
               fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase",
-              color: "var(--linen)", textDecoration: "none", fontFamily: "var(--sans)", fontWeight: 300,
+              color: "var(--text-secondary)", textDecoration: "none", fontFamily: "var(--sans)", fontWeight: 300,
             }}>
-              Collections <span style={{ display: "block", width: 32, height: 1, background: "var(--brass)" }} />
+              Collections <span style={{ display: "block", width: 32, height: 1, background: "var(--accent)" }} />
             </Link>
           </div>
         ) : (
@@ -34,8 +34,8 @@ export default function CartPage() {
             <div>
               {items.map((item, i) => (
                 <div key={item.key} style={{
-                  borderTop: i === 0 ? "1px solid rgba(168,137,90,0.15)" : "none",
-                  borderBottom: "1px solid rgba(168,137,90,0.15)",
+                  borderTop: i === 0 ? "1px solid var(--border)" : "none",
+                  borderBottom: "1px solid var(--border)",
                   padding: "32px 0",
                   display: "grid", gridTemplateColumns: "96px 1fr auto",
                   gap: 28, alignItems: "start",
@@ -48,7 +48,7 @@ export default function CartPage() {
                   <div>
                     <div style={{ fontFamily: "var(--serif)", fontSize: 22, fontWeight: 400,
                       color: "var(--parchment)", marginBottom: 6, letterSpacing: "-0.01em" }}>{item.name}</div>
-                    <div style={{ fontSize: 12, color: "var(--tobacco)", letterSpacing: "0.08em",
+                    <div style={{ fontSize: 12, color: "var(--text-secondary)", letterSpacing: "0.08em",
                       fontFamily: "var(--sans)", fontWeight: 300, marginBottom: 20 }}>
                       {item.collection} · {item.color} · {item.size}
                     </div>
@@ -56,56 +56,59 @@ export default function CartPage() {
                       {[-1, 1].map((d, di) => (
                         <button key={di} onClick={() => updateQty(item.key, d)} style={{
                           width: 30, height: 30, background: "none",
-                          border: "1px solid rgba(168,137,90,0.2)",
-                          color: "var(--parchment)", fontSize: 16,
+                          border: "1px solid var(--border)",
+                          color: "var(--text-primary)", fontSize: 16,
                           display: "flex", alignItems: "center", justifyContent: "center",
-                          borderRadius: 0,
+                          borderRadius: 0, cursor: "pointer",
                         }}>{d === -1 ? "−" : "+"}</button>
                       ))}
-                      <span style={{ fontSize: 14, color: "var(--parchment)", minWidth: 20, textAlign: "center" }}>
+                      <span style={{ fontSize: 14, color: "var(--text-primary)", minWidth: 20, textAlign: "center" }}>
                         {item.qty}
                       </span>
                     </div>
                   </div>
                   <div style={{ textAlign: "right" }}>
                     <div style={{ fontFamily: "var(--serif)", fontSize: 18,
-                      color: "var(--linen)", marginBottom: 12 }}>SGD {item.price * item.qty}</div>
+                      color: "var(--text-primary)", marginBottom: 12 }}>SGD {item.price * item.qty}</div>
                     <button onClick={() => removeItem(item.key)} style={{
-                      background: "none", border: "none", color: "rgba(107,79,53,0.5)",
+                      background: "none", border: "none", color: "var(--text-muted)",
                       fontSize: 10, letterSpacing: "0.14em",
-                      textTransform: "uppercase", fontFamily: "var(--sans)",
-                    }}>Remove</button>
+                      textTransform: "uppercase", fontFamily: "var(--sans)", cursor: "pointer",
+                      transition: "color 0.2s",
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "var(--text-primary)")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "var(--text-muted)")}>Remove</button>
                   </div>
                 </div>
               ))}
               <div style={{ marginTop: 32 }}>
                 <Link href="/collections" style={{ fontSize: 11, letterSpacing: "0.16em",
-                  textTransform: "uppercase", color: "var(--tobacco)", textDecoration: "none",
+                  textTransform: "uppercase", color: "var(--text-secondary)", textDecoration: "none",
                   fontFamily: "var(--sans)" }}>← Continue</Link>
               </div>
             </div>
 
             <div style={{ position: "sticky", top: 100 }}>
-              <div style={{ borderTop: "1px solid rgba(168,137,90,0.15)", paddingTop: 24 }}>
+              <div style={{ borderTop: "1px solid var(--border)", paddingTop: 24 }}>
                 <div style={{ fontFamily: "var(--serif)", fontSize: 18, fontWeight: 400,
-                  color: "var(--parchment)", marginBottom: 24 }}>Summary</div>
+                  color: "var(--text-primary)", marginBottom: 24 }}>Summary</div>
                 <div style={{ display: "flex", justifyContent: "space-between",
-                  fontSize: 13, color: "var(--tobacco)", marginBottom: 12,
+                  fontSize: 13, color: "var(--text-secondary)", marginBottom: 12,
                   fontFamily: "var(--sans)", fontWeight: 300 }}>
                   <span>Subtotal</span><span>SGD {subtotal}</span>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between",
-                  fontSize: 13, color: "var(--tobacco)", marginBottom: 28,
+                  fontSize: 13, color: "var(--text-secondary)", marginBottom: 28,
                   fontFamily: "var(--sans)", fontWeight: 300 }}>
                   <span>Shipping</span><span>At checkout</span>
                 </div>
                 <Link href="/checkout" style={{
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  background: "var(--parchment)", color: "var(--ink)", padding: "16px",
+                  background: "var(--text-primary)", color: "var(--bg)", padding: "16px",
                   fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase",
                   textDecoration: "none", fontFamily: "var(--sans)", marginBottom: 32,
                 }}>Checkout</Link>
-                <div style={{ fontSize: 11, color: "rgba(107,79,53,0.5)", fontFamily: "var(--sans)",
+                <div style={{ fontSize: 11, color: "var(--text-muted)", fontFamily: "var(--sans)",
                   lineHeight: 1.9, letterSpacing: "0.06em" }}>
                   Plain packaging · GZ Private Ltd billing · Free returns within 14 days
                 </div>

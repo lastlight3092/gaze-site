@@ -79,7 +79,7 @@ export default function MaterialsPage() {
       </div>
 
       <style>{`
-        .mat-row:hover { background: rgba(44,32,24,0.3); }
+        .mat-row:hover { background: var(--surface-alt); }
         @media(max-width:1024px){
           .mat-header { padding: 60px 48px 60px !important; }
           .mat-row { grid-template-columns: 1fr !important; padding: 48px !important; gap: 16px !important; }

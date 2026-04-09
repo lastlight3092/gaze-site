@@ -26,17 +26,17 @@ export default function CheckoutPage() {
   return (
     <>
       <style>{`
-        .co-input { border-bottom: 1px solid rgba(168,137,90,0.2); background: transparent; }
-        .co-input:focus { border-bottom-color: var(--brass); }
-        .ship-opt { border: 1px solid rgba(168,137,90,0.15); padding: 18px 20px;
+        .co-input { border-bottom: 1px solid var(--border); background: transparent; }
+        .co-input:focus { border-bottom-color: var(--accent); }
+        .ship-opt { border: 1px solid var(--border); padding: 18px 20px;
           transition: border-color 0.25s; margin-bottom: 8px;
-          display: flex; justify-content: space-between; align-items: center; }
-        .ship-opt.active { border-color: var(--brass); }
-        .next-btn { width: 100%; padding: 18px; background: var(--parchment); color: var(--ink);
+          display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .ship-opt.active { border-color: var(--accent); }
+        .next-btn { width: 100%; padding: 18px; background: var(--text-primary); color: var(--bg);
           border: none; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
           font-family: var(--sans); font-weight: 400; transition: background 0.25s;
-          margin-top: 32px; }
-        .next-btn:hover { background: var(--cream); }
+          margin-top: 32px; cursor: pointer; }
+        .next-btn:hover { background: var(--accent); color: var(--bg); }
       `}</style>
 
       <div style={{ paddingTop: "64px", display: "grid", gridTemplateColumns: "1fr 400px",
@@ -118,19 +118,19 @@ export default function CheckoutPage() {
             <div>
               <div style={{ fontFamily: "var(--serif)", fontSize: 28, fontWeight: 400,
                 color: "var(--parchment)", marginBottom: 32 }}>Payment</div>
-              <div style={{ border: "1px solid rgba(168,137,90,0.15)", padding: "40px",
+              <div style={{ border: "1px solid var(--border)", padding: "40px",
                 display: "flex", flexDirection: "column", alignItems: "center", gap: 16,
-                background: "rgba(61,46,30,0.3)", marginBottom: 32 }}>
+                background: "var(--surface-alt)", marginBottom: 32 }}>
                 <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase",
-                  color: "var(--tobacco)", fontFamily: "var(--sans)" }}>Secure payment</div>
+                  color: "var(--text-muted)", fontFamily: "var(--sans)" }}>Secure payment</div>
                 <div style={{ display: "flex", gap: 10 }}>
                   {["Visa","MC","Amex","PayNow"].map(m => (
-                    <div key={m} style={{ border: "1px solid rgba(168,137,90,0.2)",
-                      padding: "5px 10px", fontSize: 10, color: "var(--tobacco)",
+                    <div key={m} style={{ border: "1px solid var(--border)",
+                      padding: "5px 10px", fontSize: 10, color: "var(--text-secondary)",
                       fontFamily: "var(--sans)", letterSpacing: "0.06em" }}>{m}</div>
                   ))}
                 </div>
-                <div style={{ fontSize: 11, color: "rgba(107,79,53,0.5)", letterSpacing: "0.08em" }}>
+                <div style={{ fontSize: 11, color: "var(--text-muted)", letterSpacing: "0.08em" }}>
                   Stripe integration point
                 </div>
               </div>
@@ -162,8 +162,8 @@ export default function CheckoutPage() {
                 </div>
               ))}
               <button className="next-btn" onClick={next}
-                style={{ background: "var(--parchment)", marginTop: 40 }}>Place Order</button>
-              <p style={{ fontSize: 11, color: "rgba(107,79,53,0.5)", textAlign: "center",
+                style={{ marginTop: 40 }}>Place Order</button>
+              <p style={{ fontSize: 11, color: "var(--text-muted)", textAlign: "center",
                 marginTop: 16, fontFamily: "var(--sans)", letterSpacing: "0.08em" }}>
                 Plain packaging · Discreet billing
               </p>

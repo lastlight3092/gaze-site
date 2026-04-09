@@ -4,32 +4,38 @@
   /* ── Surfaces ── */
   --bg:           #f8f6f3;
   --surface:      #f2efea;
-  --surface-alt:  #ede9e3;
+  --surface-alt:  #e8e3dc;   /* deeper — clearly visible hover */
+  --hover-bg:     #e0dbd4;   /* strong hover highlight */
 
   /* ── Text ── */
   --text-primary:   #1e1c1a;
-  --text-secondary: #5a5550;
-  --text-muted:     #908b84;
+  --text-secondary: #4a4540;   /* slightly darker for better contrast */
+  --text-muted:     #7a7570;   /* slightly darker muted */
 
   /* ── Accent ── */
   --accent:     #b8896a;
   --accent-dim: #9a7358;
 
   /* ── Borders ── */
-  --border:       #e4dfd8;
-  --border-light: #ede9e4;
+  --border:       #d8d2cb;     /* slightly darker, more visible */
+  --border-light: #e4dfd8;
+
+  /* ── On-dark surface text (for intentional dark panels) ── */
+  --on-dark:        rgba(242,238,233,0.92);
+  --on-dark-dim:    rgba(242,238,233,0.60);
+  --on-dark-muted:  rgba(242,238,233,0.38);
 
   /* ── Compatibility aliases (components use these names) ── */
   --brass:      #b8896a;
   --brass-dim:  #9a7358;
   --parchment:  #1e1c1a;
   --cream:      #f2efea;
-  --linen:      #5a5550;
-  --tan:        #908b84;
-  --tobacco:    #908b84;
+  --linen:      #4a4540;
+  --tan:        #7a7570;
+  --tobacco:    #7a7570;
   --ink:        #1e1c1a;
   --espresso:   #f2efea;
-  --walnut:     #ede9e3;
+  --walnut:     #e8e3dc;
   --charcoal:   #f2efea;
   --obsidian:   #f8f6f3;
   --bone:       #1e1c1a;
@@ -45,7 +51,10 @@
 
 html {
   font-family: var(--sans);
-  background: var(--bg);
+  background-color: var(--bg);
+  /* Subtle textured ivory/bone — very low opacity noise */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.025'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
   color: var(--text-primary);
   font-size: 16px;
   line-height: 1.6;
@@ -85,7 +94,7 @@ input, select, textarea {
   font-family: var(--sans);
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(90,85,80,0.2);
+  border-bottom: 1px solid rgba(74,69,64,0.3);
   color: var(--text-primary);
   font-size: 14px;
   outline: none;

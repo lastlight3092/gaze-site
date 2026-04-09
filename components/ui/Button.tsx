@@ -21,8 +21,8 @@ const styles: Record<Variant, React.CSSProperties> = {
   },
   ghost: {
     background: "transparent",
-    color: "var(--bone)",
-    border: "1px solid rgba(200,191,176,0.25)",
+    color: "var(--text-secondary)",
+    border: "1px solid rgba(74,69,64,0.25)",
   },
   brass: {
     background: "var(--brass)",
@@ -37,11 +37,11 @@ const styles: Record<Variant, React.CSSProperties> = {
 };
 
 const hoverStyles: Record<Variant, React.CSSProperties> = {
-  primary: { background: "var(--cream)" },
-  outline: { borderColor: "var(--bone)", background: "var(--walnut)" },
-  ghost: { borderColor: "rgba(200,191,176,0.5)", background: "rgba(200,191,176,0.05)" },
-  brass: { background: "var(--brass-light)" },
-  dark: { background: "var(--espresso)" },
+  primary: { background: "var(--accent)", color: "var(--bg)" },
+  outline: { borderColor: "var(--text-secondary)", background: "var(--surface-alt)", color: "var(--text-primary)" },
+  ghost: { borderColor: "rgba(74,69,64,0.4)", background: "var(--surface)", color: "var(--text-primary)" },
+  brass: { background: "var(--accent-dim)", color: "var(--bg)" },
+  dark: { background: "var(--surface-alt)", color: "var(--text-primary)" },
 };
 
 export default function Button({

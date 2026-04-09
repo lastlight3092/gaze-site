@@ -12,12 +12,18 @@ export default function CollectionsPage() {
     <>
       <style>{`
         .coll-item {
-          border-bottom: 1px solid rgba(168,137,90,0.12);
+          border-bottom: 1px solid var(--border-light);
           transition: background 0.4s var(--ease-expo);
         }
-        .coll-item:hover { background: rgba(61,46,30,0.4); }
+        .coll-item:hover { background: var(--surface-alt); }
         .coll-item:hover .coll-arrow { transform: translateX(8px); opacity: 1; }
-        .coll-arrow { transition: transform 0.4s var(--ease-expo), opacity 0.3s; opacity: 0.3; }
+        .coll-arrow { transition: transform 0.4s var(--ease-expo), opacity 0.3s; opacity: 0.4; color: var(--accent); }
+        .coll-num { transition: color 0.35s; }
+        .coll-tagline { transition: color 0.35s; }
+        .coll-desc { transition: color 0.35s; }
+        .coll-item:hover .coll-num    { color: rgba(107,79,53,0.55) !important; }
+        .coll-item:hover .coll-tagline { color: var(--text-primary) !important; }
+        .coll-item:hover .coll-desc   { color: var(--text-secondary) !important; }
       `}</style>
 
       {/* Masthead */}
@@ -25,7 +31,7 @@ export default function CollectionsPage() {
         paddingTop: "calc(64px + 80px)",
         paddingBottom: 60,
         paddingLeft: 80, paddingRight: 80,
-        borderBottom: "1px solid rgba(168,137,90,0.12)",
+        borderBottom: "1px solid var(--border-light)",
       }}>
         <div style={{ fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase",
           color: "var(--brass)", fontFamily: "var(--sans)", marginBottom: 24 }}>
@@ -48,25 +54,25 @@ export default function CollectionsPage() {
             alignItems: "center",
             gap: 40,
           }}>
-            <div style={{ fontFamily: "var(--serif)", fontSize: 44, fontWeight: 400,
+            <div className="coll-num" style={{ fontFamily: "var(--serif)", fontSize: 44, fontWeight: 400,
               color: "rgba(107,79,53,0.3)", lineHeight: 1 }}>
               0{i + 1}
             </div>
             <div>
               <div style={{ fontFamily: "var(--serif)", fontSize: "clamp(24px,3vw,42px)",
-                fontWeight: 400, color: "var(--parchment)", marginBottom: 8, letterSpacing: "-0.01em" }}>
+                fontWeight: 400, color: "var(--text-primary)", marginBottom: 8, letterSpacing: "-0.01em" }}>
                 {coll.name}
               </div>
-              <div style={{ fontSize: 12, color: "var(--tobacco)", letterSpacing: "0.08em",
+              <div className="coll-tagline" style={{ fontSize: 12, color: "var(--text-muted)", letterSpacing: "0.08em",
                 fontFamily: "var(--sans)", fontWeight: 300 }}>
                 {coll.tagline}
               </div>
             </div>
-            <div style={{ fontSize: 13, color: "var(--tan)", lineHeight: 1.8,
+            <div className="coll-desc" style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.8,
               fontFamily: "var(--sans)", fontWeight: 300, maxWidth: 320 }}>
               {coll.description.split(".")[0]}.
             </div>
-            <div className="coll-arrow" style={{ fontSize: 20, color: "var(--brass)" }}>→</div>
+            <div className="coll-arrow" style={{ fontSize: 20, color: "var(--accent)" }}>→</div>
           </div>
         </Link>
       ))}

@@ -19,7 +19,7 @@ export default function CartDrawer() {
         transform: isOpen ? "translateX(0)" : "translateX(100%)",
         transition: "transform 0.45s var(--ease-expo)",
         display: "flex", flexDirection: "column",
-        borderLeft: "1px solid rgba(168,137,90,0.15)",
+        borderLeft: "1px solid var(--border)",
       }}>
         {/* Header */}
         <div style={{
@@ -44,16 +44,16 @@ export default function CartDrawer() {
           {items.length === 0 ? (
             <div style={{ padding: "80px 36px", textAlign: "center" }}>
               <div style={{ fontFamily: "var(--serif)", fontSize: 24, fontWeight: 400,
-                color: "var(--tobacco)", marginBottom: 16 }}>The bag is empty.</div>
-              <p style={{ fontSize: 13, color: "rgba(107,79,53,0.6)", fontFamily: "var(--sans)",
+                color: "var(--text-secondary)", marginBottom: 16 }}>The bag is empty.</div>
+              <p style={{ fontSize: 13, color: "var(--text-muted)", fontFamily: "var(--sans)",
                 fontWeight: 300, lineHeight: 1.8, marginBottom: 32 }}>
                 Browse the collections to find something precisely right.
               </p>
               <button onClick={closeCart} style={{
-                background: "none", border: "1px solid rgba(168,137,90,0.3)",
-                color: "var(--tan)", padding: "12px 24px", fontSize: 10,
+                background: "none", border: "1px solid var(--border)",
+                color: "var(--text-secondary)", padding: "12px 24px", fontSize: 10,
                 letterSpacing: "0.2em", textTransform: "uppercase",
-                fontFamily: "var(--sans)", transition: "all 0.25s",
+                fontFamily: "var(--sans)", transition: "all 0.25s", cursor: "pointer",
               }}>Browse</button>
             </div>
           ) : (
@@ -79,32 +79,32 @@ export default function CartDrawer() {
                     <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                       <button onClick={() => updateQty(item.key, -1)} style={{
                         width: 26, height: 26, background: "none",
-                        border: "1px solid rgba(168,137,90,0.2)",
-                        color: "var(--parchment)", fontSize: 14,
+                        border: "1px solid var(--border)",
+                        color: "var(--text-primary)", fontSize: 14,
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        borderRadius: 0, transition: "all 0.2s",
+                        borderRadius: 0, transition: "all 0.2s", cursor: "pointer",
                       }}>−</button>
                       <span style={{ fontSize: 13, minWidth: 16, textAlign: "center",
-                        color: "var(--parchment)" }}>{item.qty}</span>
+                        color: "var(--text-primary)" }}>{item.qty}</span>
                       <button onClick={() => updateQty(item.key, 1)} style={{
                         width: 26, height: 26, background: "none",
-                        border: "1px solid rgba(168,137,90,0.2)",
-                        color: "var(--parchment)", fontSize: 14,
+                        border: "1px solid var(--border)",
+                        color: "var(--text-primary)", fontSize: 14,
                         display: "flex", alignItems: "center", justifyContent: "center",
-                        borderRadius: 0, transition: "all 0.2s",
+                        borderRadius: 0, transition: "all 0.2s", cursor: "pointer",
                       }}>+</button>
                     </div>
-                    <span style={{ fontSize: 15, color: "var(--linen)",
+                    <span style={{ fontSize: 15, color: "var(--text-primary)",
                       fontFamily: "var(--serif)" }}>SGD {item.price * item.qty}</span>
                   </div>
                   <button onClick={() => removeItem(item.key)} style={{
-                    background: "none", border: "none", color: "rgba(107,79,53,0.5)",
+                    background: "none", border: "none", color: "var(--text-muted)",
                     fontSize: 10, letterSpacing: "0.14em",
                     textTransform: "uppercase", padding: 0, marginTop: 10,
-                    fontFamily: "var(--sans)", transition: "color 0.2s",
+                    fontFamily: "var(--sans)", transition: "color 0.2s", cursor: "pointer",
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "var(--tobacco)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(107,79,53,0.5)")}>
+                  onMouseEnter={e => (e.currentTarget.style.color = "var(--text-primary)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "var(--text-muted)")}>
                     Remove
                   </button>
                 </div>
@@ -123,13 +123,13 @@ export default function CartDrawer() {
               <span style={{ fontFamily: "var(--serif)", fontSize: 20,
                 color: "var(--parchment)" }}>SGD {subtotal}</span>
             </div>
-            <p style={{ fontSize: 11, color: "rgba(107,79,53,0.5)", marginBottom: 20,
+            <p style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 20,
               letterSpacing: "0.06em", fontFamily: "var(--sans)" }}>
               Shipping at checkout · Plain packaging
             </p>
             <Link href="/checkout" onClick={closeCart} style={{
               display: "flex", alignItems: "center", justifyContent: "center",
-              background: "var(--parchment)", color: "var(--ink)",
+              background: "var(--text-primary)", color: "var(--bg)",
               padding: "16px", fontSize: 11, letterSpacing: "0.22em",
               textTransform: "uppercase", textDecoration: "none",
               fontFamily: "var(--sans)", fontWeight: 400,
@@ -137,8 +137,8 @@ export default function CartDrawer() {
             }}>Checkout</Link>
             <Link href="/cart" onClick={closeCart} style={{
               display: "flex", alignItems: "center", justifyContent: "center",
-              background: "transparent", color: "var(--tan)",
-              border: "1px solid rgba(168,137,90,0.2)",
+              background: "transparent", color: "var(--text-secondary)",
+              border: "1px solid var(--border)",
               padding: "14px", fontSize: 11, letterSpacing: "0.18em",
               textTransform: "uppercase", textDecoration: "none",
               fontFamily: "var(--sans)", fontWeight: 300,

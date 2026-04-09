@@ -57,7 +57,7 @@ export default function AccountPage() {
         ))}
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center" }}>
           <Link href="/" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase",
-            color: "rgba(107,79,53,0.5)", textDecoration: "none", fontFamily: "var(--sans)" }}>
+            color: "var(--text-muted)", textDecoration: "none", fontFamily: "var(--sans)" }}>
             Sign out
           </Link>
         </div>
@@ -75,14 +75,14 @@ export default function AccountPage() {
               <span style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase",
                 color: "var(--brass)", fontFamily: "var(--sans)" }}>Private Access — Active</span>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 2,
-              background: "rgba(168,137,90,0.08)", marginBottom: 64 }} className="acc-stats">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 1,
+              background: "var(--border-light)", marginBottom: 64 }} className="acc-stats">
               {[["4","Total orders"],["11","Pieces owned"],["SGD 1,258","Total spent"]].map(([val,lbl]) => (
-                <div key={lbl} style={{ background: "var(--ink)", padding: "36px 32px" }}>
+                <div key={lbl} style={{ background: "var(--surface-alt)", padding: "36px 32px" }}>
                   <div style={{ fontFamily: "var(--serif)", fontSize: 36, fontWeight: 400,
-                    color: "var(--parchment)", marginBottom: 8 }}>{val}</div>
+                    color: "var(--text-primary)", marginBottom: 8 }}>{val}</div>
                   <div style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase",
-                    color: "var(--tobacco)", fontFamily: "var(--sans)" }}>{lbl}</div>
+                    color: "var(--text-muted)", fontFamily: "var(--sans)" }}>{lbl}</div>
                 </div>
               ))}
             </div>
@@ -223,10 +223,10 @@ export default function AccountPage() {
                 </div>
               ))}
               <button style={{
-                background: "var(--parchment)", color: "var(--ink)", border: "none",
+                background: "var(--text-primary)", color: "var(--bg)", border: "none",
                 padding: "14px 32px", fontSize: 11, letterSpacing: "0.22em",
                 textTransform: "uppercase", fontFamily: "var(--sans)",
-                fontWeight: 400, alignSelf: "flex-start", marginTop: 8,
+                fontWeight: 400, alignSelf: "flex-start", marginTop: 8, cursor: "pointer",
               }}>Save changes</button>
             </div>
           </div>
@@ -234,7 +234,7 @@ export default function AccountPage() {
       </div>
 
       <style>{`
-        .wishlist-row:hover { background: rgba(44,32,24,0.3) !important; }
+        .wishlist-row:hover { background: var(--surface-alt) !important; }
         @media(max-width:1024px){
           .acc-header, .acc-nav, .acc-content { padding-left: 48px !important; padding-right: 48px !important; }
           .acc-stats { grid-template-columns: 1fr 1fr !important; }

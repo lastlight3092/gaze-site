@@ -31,10 +31,10 @@ export default function CollectionClient({ collection, initialProducts }: Props)
     <>
       <style>{`
         .prod-item {
-          border-bottom: 1px solid rgba(168,137,90,0.1);
+          border-bottom: 1px solid var(--border-light);
           transition: background 0.35s var(--ease-expo);
         }
-        .prod-item:hover { background: rgba(61,46,30,0.3); }
+        .prod-item:hover { background: var(--surface-alt); }
         .prod-item:hover .prod-reveal { opacity: 1; transform: translateX(0); }
         .prod-reveal {
           opacity: 0;
@@ -43,8 +43,8 @@ export default function CollectionClient({ collection, initialProducts }: Props)
         }
         .filter-pill {
           background: none;
-          border: 1px solid rgba(168,137,90,0.2);
-          color: var(--tan);
+          border: 1px solid var(--border);
+          color: var(--text-muted);
           padding: 7px 16px;
           font-size: 10px;
           letter-spacing: 0.18em;
@@ -52,11 +52,12 @@ export default function CollectionClient({ collection, initialProducts }: Props)
           font-family: var(--sans);
           transition: all 0.25s;
           border-radius: 0;
+          cursor: pointer;
         }
         .filter-pill:hover, .filter-pill.active {
-          background: rgba(168,137,90,0.12);
-          border-color: var(--brass);
-          color: var(--parchment);
+          background: var(--surface-alt);
+          border-color: var(--accent);
+          color: var(--text-primary);
         }
       `}</style>
 
@@ -181,7 +182,7 @@ export default function CollectionClient({ collection, initialProducts }: Props)
                   }}>{product.badge}</div>
                 )}
                 <div style={{
-                  fontSize: 18, color: "var(--linen)", letterSpacing: "0.04em",
+                  fontSize: 18, color: "var(--text-primary)", letterSpacing: "0.04em",
                   fontFamily: "var(--serif)",
                 }}>
                   SGD {product.price}

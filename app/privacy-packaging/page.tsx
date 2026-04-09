@@ -42,7 +42,7 @@ export default function PrivacyPackagingPage() {
                 padding: "32px 0", borderBottom: i < 3 ? "1px solid rgba(168,137,90,0.06)" : "none",
               }}>
                 <div style={{ fontFamily: "var(--serif)", fontSize: 28, fontWeight: 400,
-                  color: "rgba(107,79,53,0.3)", lineHeight: 1, paddingTop: 4 }}>{step.n}</div>
+                  color: "rgba(107,79,53,0.45)", lineHeight: 1, paddingTop: 4 }}>{step.n}</div>
                 <div>
                   <div style={{ fontFamily: "var(--serif)", fontSize: 17, fontWeight: 400,
                     color: "var(--parchment)", marginBottom: 10 }}>{step.title}</div>

@@ -36,12 +36,12 @@ export default function ProductClient({ product }: { product: Product }) {
           width: 100%;
           background: none;
           border: none;
-          border-top: 1px solid rgba(168,137,90,0.12);
+          border-top: 1px solid var(--border-light);
           padding: 18px 0;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          color: var(--parchment);
+          color: var(--text-secondary);
           font-family: var(--sans);
           font-size: 11px;
           letter-spacing: 0.18em;
@@ -49,13 +49,14 @@ export default function ProductClient({ product }: { product: Product }) {
           text-align: left;
           font-weight: 300;
           transition: color 0.25s;
+          cursor: pointer;
         }
-        .detail-trigger:hover { color: var(--linen); }
-        .detail-icon { color: var(--brass); font-size: 16px; transition: transform 0.3s var(--ease-expo); }
+        .detail-trigger:hover { color: var(--text-primary); }
+        .detail-icon { color: var(--accent); font-size: 16px; transition: transform 0.3s var(--ease-expo); }
         .detail-icon.open { transform: rotate(45deg); }
         .detail-body {
           font-size: 13px;
-          color: var(--tan);
+          color: var(--text-secondary);
           line-height: 1.9;
           padding: 0 0 20px;
           font-family: var(--sans);
@@ -63,9 +64,9 @@ export default function ProductClient({ product }: { product: Product }) {
           letter-spacing: 0.02em;
         }
         .size-btn {
-          border: 1px solid rgba(168,137,90,0.2);
+          border: 1px solid var(--border);
           background: none;
-          color: var(--tan);
+          color: var(--text-secondary);
           padding: 12px 6px;
           font-size: 12px;
           letter-spacing: 0.1em;
@@ -73,23 +74,25 @@ export default function ProductClient({ product }: { product: Product }) {
           font-family: var(--sans);
           border-radius: 0;
           text-align: center;
+          cursor: pointer;
         }
-        .size-btn:hover { border-color: var(--tan); color: var(--parchment); }
-        .size-btn.active { border-color: var(--parchment); background: var(--parchment); color: var(--ink); }
+        .size-btn:hover { border-color: var(--text-secondary); color: var(--text-primary); background: var(--surface); }
+        .size-btn.active { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg); }
         .swatch {
           width: 24px; height: 24px;
           border-radius: 50%;
           border: 2px solid transparent;
-          outline: 1px solid rgba(168,137,90,0.2);
+          outline: 1px solid var(--border);
           outline-offset: 3px;
           transition: outline-color 0.25s, border-color 0.25s;
+          cursor: pointer;
         }
-        .swatch.active, .swatch:hover { outline-color: var(--brass); }
+        .swatch.active, .swatch:hover { outline-color: var(--accent); }
         .atc-btn {
           width: 100%;
           padding: 18px;
-          background: var(--parchment);
-          color: var(--ink);
+          background: var(--text-primary);
+          color: var(--bg);
           border: none;
           font-size: 11px;
           letter-spacing: 0.22em;
@@ -97,9 +100,10 @@ export default function ProductClient({ product }: { product: Product }) {
           font-family: var(--sans);
           font-weight: 400;
           transition: all 0.3s var(--ease-expo);
+          cursor: pointer;
         }
-        .atc-btn:hover { background: var(--cream); }
-        .atc-btn.added { background: var(--brass); color: var(--ink); }
+        .atc-btn:hover { background: var(--accent); color: var(--bg); }
+        .atc-btn.added { background: var(--accent); color: var(--bg); }
       `}</style>
 
       <div style={{
@@ -117,14 +121,14 @@ export default function ProductClient({ product }: { product: Product }) {
         }} className="product-gallery">
           {/* Grain */}
           <div aria-hidden style={{
-            position: "absolute", inset: 0, zIndex: 2, opacity: 0.45, mixBlendMode: "overlay",
+            position: "absolute", inset: 0, zIndex: 2, opacity: 0.3, mixBlendMode: "multiply",
             backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E\")",
             backgroundSize: "300px",
           }} />
-          {/* Warm vignette */}
+          {/* Subtle vignette */}
           <div aria-hidden style={{
             position: "absolute", inset: 0, zIndex: 1,
-            background: "radial-gradient(ellipse at center, transparent 40%, rgba(14,10,6,0.5) 100%)",
+            background: "radial-gradient(ellipse at center, transparent 50%, rgba(30,28,26,0.06) 100%)",
           }} />
           {/* Large letter placeholder */}
           <div style={{ zIndex: 3, textAlign: "center", userSelect: "none" }}>
@@ -141,7 +145,7 @@ export default function ProductClient({ product }: { product: Product }) {
             </div>
             <div style={{
               fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase",
-              color: "rgba(154,125,95,0.4)", fontFamily: "var(--sans)", marginTop: 20,
+              color: "rgba(154,125,95,0.65)", fontFamily: "var(--sans)", marginTop: 20,
             }}>
               {product.collectionName} · {product.specs.Composition.split(",")[0]}
             </div>
@@ -155,8 +159,8 @@ export default function ProductClient({ product }: { product: Product }) {
             {[0,1,2].map(i => (
               <div key={i} style={{
                 width: 48, height: 60,
-                background: i === 0 ? "rgba(168,137,90,0.15)" : "rgba(61,46,30,0.4)",
-                border: `1px solid ${i === 0 ? "var(--brass)" : "rgba(168,137,90,0.15)"}`,
+                background: i === 0 ? "rgba(168,137,90,0.18)" : "rgba(30,28,26,0.08)",
+                border: `1px solid ${i === 0 ? "var(--accent)" : "var(--border-light)"}`,
               }} />
             ))}
           </div>
@@ -166,22 +170,22 @@ export default function ProductClient({ product }: { product: Product }) {
         <div style={{
           padding: "100px 56px 80px 56px",
           overflowY: "auto",
-          background: "var(--ink)",
-          borderLeft: "1px solid rgba(168,137,90,0.08)",
+          background: "var(--surface)",
+          borderLeft: "1px solid var(--border-light)",
         }} className="product-detail">
 
           {/* Breadcrumb */}
           <div style={{
             display: "flex", gap: 8, alignItems: "center",
             fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase",
-            color: "var(--tobacco)", fontFamily: "var(--sans)", marginBottom: 36,
+            color: "var(--text-muted)", fontFamily: "var(--sans)", marginBottom: 36,
           }}>
             <Link href={`/collections/${product.collection}`}
-              style={{ color: "var(--tobacco)", textDecoration: "none" }}>
+              style={{ color: "var(--text-muted)", textDecoration: "none" }}>
               {product.collectionName}
             </Link>
             <span style={{ opacity: 0.4 }}>·</span>
-            <span style={{ color: "var(--tan)" }}>{product.name}</span>
+            <span style={{ color: "var(--text-secondary)" }}>{product.name}</span>
           </div>
 
           {/* Name */}
@@ -190,28 +194,28 @@ export default function ProductClient({ product }: { product: Product }) {
             fontSize: "clamp(32px, 4vw, 54px)",
             fontWeight: 400, lineHeight: 1.05,
             letterSpacing: "-0.01em",
-            color: "var(--parchment)",
+            color: "var(--text-primary)",
             marginBottom: 16,
           }}>{product.name}</h1>
 
           <p style={{
-            fontSize: 14, color: "var(--tan)", lineHeight: 1.8,
+            fontSize: 14, color: "var(--text-secondary)", lineHeight: 1.8,
             fontFamily: "var(--sans)", fontWeight: 300,
             marginBottom: 32, maxWidth: 380,
           }}>{product.short}</p>
 
           <div style={{
-            fontSize: 24, color: "var(--linen)", letterSpacing: "0.04em",
+            fontSize: 24, color: "var(--text-primary)", letterSpacing: "0.04em",
             fontFamily: "var(--serif)", marginBottom: 48,
           }}>
-            <span style={{ fontSize: 14, color: "var(--tobacco)", marginRight: 4 }}>SGD</span>
+            <span style={{ fontSize: 14, color: "var(--text-muted)", marginRight: 4 }}>SGD</span>
             {product.price}
           </div>
 
           {/* Colour */}
           <div style={{ marginBottom: 32 }}>
             <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase",
-              color: "var(--tobacco)", fontFamily: "var(--sans)", marginBottom: 12 }}>
+              color: "var(--text-muted)", fontFamily: "var(--sans)", marginBottom: 12 }}>
               Colour — {selectedColor.name}
             </div>
             <div style={{ display: "flex", gap: 10 }}>
@@ -228,13 +232,13 @@ export default function ProductClient({ product }: { product: Product }) {
           <div style={{ marginBottom: 36 }}>
             <div style={{
               fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase",
-              color: sizeError ? "var(--brass)" : "var(--tobacco)",
+              color: sizeError ? "var(--accent)" : "var(--text-muted)",
               fontFamily: "var(--sans)", marginBottom: 12,
               display: "flex", justifyContent: "space-between",
               transition: "color 0.3s",
             }}>
               <span>{sizeError ? "Select a size to continue" : `Size${selectedSize ? ` — ${selectedSize}` : ""}`}</span>
-              <Link href="/fit-guide" style={{ color: "var(--brass)", textDecoration: "none",
+              <Link href="/fit-guide" style={{ color: "var(--accent)", textDecoration: "none",
                 fontSize: 10, letterSpacing: "0.12em" }}>Guide →</Link>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: `repeat(${product.sizes.length}, 1fr)`, gap: 6 }}>
@@ -251,13 +255,13 @@ export default function ProductClient({ product }: { product: Product }) {
             {added ? "Added to bag" : "Add to bag"}
           </button>
 
-          <p style={{ fontSize: 11, color: "var(--tobacco)", letterSpacing: "0.1em",
+          <p style={{ fontSize: 11, color: "var(--text-muted)", letterSpacing: "0.1em",
             textAlign: "center", fontFamily: "var(--sans)", marginBottom: 48, fontWeight: 300 }}>
             Plain packaging · Discreet billing · Free returns
           </p>
 
           {/* Details accordion */}
-          <div style={{ borderBottom: "1px solid rgba(168,137,90,0.12)" }}>
+          <div style={{ borderBottom: "1px solid var(--border-light)" }}>
             {details.map(d => (
               <div key={d.id}>
                 <button className="detail-trigger"
@@ -275,16 +279,16 @@ export default function ProductClient({ product }: { product: Product }) {
           {/* Specs grid */}
           <div style={{ marginTop: 40 }}>
             <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase",
-              color: "var(--tobacco)", fontFamily: "var(--sans)", marginBottom: 20 }}>
+              color: "var(--text-muted)", fontFamily: "var(--sans)", marginBottom: 20 }}>
               Technical
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px",
-              background: "rgba(168,137,90,0.1)" }}>
+              background: "var(--border-light)" }}>
               {Object.entries(product.specs).slice(0, 8).map(([k, v]) => (
-                <div key={k} style={{ background: "var(--ink)", padding: "14px 16px" }}>
-                  <div style={{ fontSize: 10, color: "var(--tobacco)", letterSpacing: "0.1em",
+                <div key={k} style={{ background: "var(--surface)", padding: "14px 16px" }}>
+                  <div style={{ fontSize: 10, color: "var(--text-muted)", letterSpacing: "0.1em",
                     textTransform: "uppercase", fontFamily: "var(--sans)", marginBottom: 4 }}>{k}</div>
-                  <div style={{ fontSize: 12, color: "var(--parchment)", fontFamily: "var(--sans)",
+                  <div style={{ fontSize: 12, color: "var(--text-primary)", fontFamily: "var(--sans)",
                     fontWeight: 300 }}>{v}</div>
                 </div>
               ))}
