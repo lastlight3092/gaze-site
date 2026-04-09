@@ -14,8 +14,6 @@ const PANELS = [
     cta: null,
     align: "center",
     textY: "center",
-    zen:
-      "repeating-linear-gradient(7deg, rgba(174,157,128,0.028) 0 1px, transparent 1px 16px), repeating-linear-gradient(96deg, rgba(166,149,120,0.018) 0 1px, transparent 1px 22px)",
   },
   {
     id: "statement",
@@ -27,8 +25,6 @@ const PANELS = [
     cta: null,
     align: "left",
     textY: "bottom",
-    zen:
-      "repeating-linear-gradient(12deg, rgba(171,154,124,0.026) 0 1px, transparent 1px 15px), repeating-linear-gradient(103deg, rgba(160,143,111,0.018) 0 1px, transparent 1px 21px)",
   },
   {
     id: "core",
@@ -40,8 +36,6 @@ const PANELS = [
     cta: { label: "Enter Core", href: "/collections/core" },
     align: "right",
     textY: "center",
-    zen:
-      "repeating-linear-gradient(5deg, rgba(170,153,123,0.03) 0 1px, transparent 1px 14px), repeating-linear-gradient(92deg, rgba(158,141,109,0.018) 0 1px, transparent 1px 20px)",
   },
   {
     id: "after-dark",
@@ -53,8 +47,6 @@ const PANELS = [
     cta: { label: "Enter After Dark", href: "/collections/after-dark" },
     align: "left",
     textY: "center",
-    zen:
-      "repeating-linear-gradient(9deg, rgba(168,151,120,0.028) 0 1px, transparent 1px 13px), repeating-linear-gradient(101deg, rgba(158,141,109,0.018) 0 1px, transparent 1px 21px)",
   },
   {
     id: "resort",
@@ -66,8 +58,6 @@ const PANELS = [
     cta: { label: "Enter Resort", href: "/collections/resort" },
     align: "right",
     textY: "bottom",
-    zen:
-      "repeating-linear-gradient(11deg, rgba(172,156,126,0.026) 0 1px, transparent 1px 14px), repeating-linear-gradient(98deg, rgba(160,143,112,0.017) 0 1px, transparent 1px 20px)",
   },
   {
     id: "vault",
@@ -79,8 +69,6 @@ const PANELS = [
     cta: { label: "Enter Vault", href: "/collections/vault" },
     align: "center",
     textY: "center",
-    zen:
-      "repeating-linear-gradient(6deg, rgba(170,153,123,0.025) 0 1px, transparent 1px 16px), repeating-linear-gradient(95deg, rgba(160,143,112,0.016) 0 1px, transparent 1px 22px)",
   },
 ];
 
@@ -118,16 +106,6 @@ export default function Home() {
           overflow: hidden;
           display: flex;
           align-items: center;
-        }
-        .editorial-panel::before {
-          content: '';
-          position: absolute;
-          inset: -8%;
-          background: var(--panel-zen);
-          opacity: 0.34;
-          mix-blend-mode: multiply;
-          pointer-events: none;
-          z-index: 0;
         }
         .panel-inner {
           position: absolute; inset: 0;
@@ -298,7 +276,7 @@ export default function Home() {
             <section
               key={panel.id}
               className="editorial-panel"
-              style={{ background: panel.bg, "--panel-zen": panel.zen } as CSSProperties}
+              style={{ background: panel.bg } as CSSProperties}
             >
               {/* Text layer */}
               <div className={`panel-inner ${posClass} ${valignClass}`} style={{ zIndex: 4 }}>
