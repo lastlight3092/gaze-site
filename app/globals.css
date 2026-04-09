@@ -69,7 +69,8 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background: transparent;
+  background: none !important;
+  background-image: none !important;
 }
 
 /* ─── Typography ─── */
