@@ -6,7 +6,7 @@ import Link from "next/link";
 const PANELS = [
   {
     id: "opener",
-    bg: "linear-gradient(168deg, #f0ece5 0%, #eae4db 35%, #ede8df 60%, #f2ece4 100%)",
+    bg: "var(--bg)",
     accent: "linear-gradient(115deg, rgba(185,166,130,0.08) 0%, rgba(185,166,130,0.03) 32%, transparent 62%)",
     headline: null,
     sub: null,
@@ -17,7 +17,7 @@ const PANELS = [
   },
   {
     id: "statement",
-    bg: "linear-gradient(145deg, #edeae6 0%, #e8e4de 50%, #ece7e0 100%)",
+    bg: "var(--bg)",
     accent: "linear-gradient(132deg, rgba(185,166,130,0.06) 0%, rgba(185,166,130,0.025) 28%, transparent 58%)",
     headline: "Worn close.\nFelt privately.",
     sub: null,
@@ -28,7 +28,7 @@ const PANELS = [
   },
   {
     id: "core",
-    bg: "linear-gradient(200deg, #ede7de 0%, #e8e2d8 40%, #ede6db 100%)",
+    bg: "var(--bg)",
     accent: "linear-gradient(148deg, rgba(183,164,126,0.07) 0%, rgba(183,164,126,0.03) 26%, transparent 54%)",
     headline: "Core",
     sub: "The foundation. Supima Modal, cut precisely for the tropical day.",
@@ -39,7 +39,7 @@ const PANELS = [
   },
   {
     id: "after-dark",
-    bg: "linear-gradient(160deg, #e8e6e2 0%, #e2dfd9 45%, #e6e2dd 100%)",
+    bg: "var(--bg)",
     accent: "linear-gradient(124deg, rgba(173,156,122,0.065) 0%, rgba(173,156,122,0.025) 30%, transparent 58%)",
     headline: "After Dark",
     sub: "Japanese micro-voile. For evenings that begin with intention.",
@@ -50,7 +50,7 @@ const PANELS = [
   },
   {
     id: "resort",
-    bg: "linear-gradient(135deg, #ece9e3 0%, #e6e2db 50%, #eae5de 100%)",
+    bg: "var(--bg)",
     accent: "linear-gradient(138deg, rgba(181,163,127,0.06) 0%, rgba(181,163,127,0.024) 29%, transparent 56%)",
     headline: "Resort",
     sub: "ECONYL® recycled nylon. Made for the ocean. Returned to it.",
@@ -61,7 +61,7 @@ const PANELS = [
   },
   {
     id: "vault",
-    bg: "linear-gradient(170deg, #e8e5e0 0%, #e2dfda 60%, #e6e2dc 100%)",
+    bg: "var(--bg)",
     accent: "linear-gradient(142deg, rgba(179,160,124,0.06) 0%, rgba(179,160,124,0.022) 34%, transparent 62%)",
     headline: "Vault",
     sub: "Numbered editions. Rare compositions. Not restocked.",
@@ -111,17 +111,6 @@ export default function Home() {
           position: absolute; inset: 0;
           display: flex;
           flex-direction: column;
-        }
-        /* Grain */
-        .editorial-panel::after {
-          content: '';
-          position: absolute; inset: 0;
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-          background-size: 300px;
-          pointer-events: none;
-          z-index: 3;
-          opacity: 0.3;
-          mix-blend-mode: multiply;
         }
         /* Reveal animations */
         .panel-text-block {

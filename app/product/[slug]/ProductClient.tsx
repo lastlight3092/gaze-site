@@ -123,16 +123,10 @@ export default function ProductClient({ product }: { product: Product }) {
         {/* ── Gallery ── */}
         <div style={{
           position: "sticky", top: 0, height: "100vh",
-          background: `linear-gradient(145deg, var(--walnut) 0%, var(--espresso) 100%)`,
+          background: "var(--bg)",
           display: "flex", alignItems: "center", justifyContent: "center",
           overflow: "hidden",
         }} className="product-gallery">
-          {/* Grain */}
-          <div aria-hidden style={{
-            position: "absolute", inset: 0, zIndex: 2, opacity: 0.3, mixBlendMode: "multiply",
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E\")",
-            backgroundSize: "300px",
-          }} />
           {/* Large letter placeholder */}
           <div style={{ zIndex: 3, textAlign: "center", userSelect: "none" }}>
             <div style={{
@@ -173,7 +167,7 @@ export default function ProductClient({ product }: { product: Product }) {
         <div style={{
           padding: "100px 56px 80px 56px",
           overflowY: "auto",
-          background: "var(--surface)",
+          background: "var(--bg)",
           borderLeft: "1px solid var(--border-light)",
         }} className="product-detail">
 

@@ -18,16 +18,13 @@ export default function AuthClient({ mode }: { mode: "login" | "signup" }) {
       paddingTop: 64 }} className="auth-layout">
       {/* Visual panel */}
       <div style={{
-        background: "linear-gradient(160deg, #e8e3dc 0%, #ddd7ce 50%, #2c2018 100%)",
+        background: "var(--bg)",
         position: "relative", overflow: "hidden",
         display: "flex", alignItems: "flex-end", padding: "80px",
       }} className="auth-visual">
-        <div aria-hidden style={{ position: "absolute", inset: 0, opacity: 0.06,
-          backgroundImage: "repeating-linear-gradient(45deg, rgba(30,28,26,0.5) 0, rgba(30,28,26,0.5) 1px, transparent 0, transparent 50%)",
-          backgroundSize: "28px 28px" }} />
         <div style={{ position: "relative", zIndex: 1 }}>
           <blockquote style={{ fontFamily: "var(--serif)", fontSize: "clamp(24px,3vw,44px)",
-            fontWeight: 400, lineHeight: 1.2, color: "rgba(242,238,233,0.92)", fontStyle: "italic",
+            fontWeight: 400, lineHeight: 1.2, color: "var(--text-primary)", fontStyle: "italic",
             marginBottom: 24, maxWidth: 420 }}>
             &ldquo;{mode === "login"
               ? "The well-dressed man is one whose clothing is entirely unobtrusive."
@@ -39,7 +36,7 @@ export default function AuthClient({ mode }: { mode: "login" | "signup" }) {
       </div>
 
       {/* Form */}
-      <div style={{ background: "var(--surface)", display: "flex", alignItems: "center",
+      <div style={{ background: "var(--bg)", display: "flex", alignItems: "center",
         justifyContent: "center", padding: "48px 56px", borderLeft: "1px solid var(--border-light)" }}>
         <div style={{ width: "100%", maxWidth: 340 }}>
           <Link href="/" style={{
