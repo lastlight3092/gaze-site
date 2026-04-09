@@ -7,7 +7,6 @@ const PANELS = [
   {
     id: "opener",
     bg: "var(--bg)",
-    accent: "linear-gradient(115deg, rgba(185,166,130,0.08) 0%, rgba(185,166,130,0.03) 32%, transparent 62%)",
     headline: null,
     sub: null,
     tag: "Bangkok · Est. 2024",
@@ -18,7 +17,6 @@ const PANELS = [
   {
     id: "statement",
     bg: "var(--bg)",
-    accent: "linear-gradient(132deg, rgba(185,166,130,0.06) 0%, rgba(185,166,130,0.025) 28%, transparent 58%)",
     headline: "Worn close.\nFelt privately.",
     sub: null,
     tag: null,
@@ -29,7 +27,6 @@ const PANELS = [
   {
     id: "core",
     bg: "var(--bg)",
-    accent: "linear-gradient(148deg, rgba(183,164,126,0.07) 0%, rgba(183,164,126,0.03) 26%, transparent 54%)",
     headline: "Core",
     sub: "The foundation. Supima Modal, cut precisely for the tropical day.",
     tag: "Collection 01",
@@ -40,7 +37,6 @@ const PANELS = [
   {
     id: "after-dark",
     bg: "var(--bg)",
-    accent: "linear-gradient(124deg, rgba(173,156,122,0.065) 0%, rgba(173,156,122,0.025) 30%, transparent 58%)",
     headline: "After Dark",
     sub: "Japanese micro-voile. For evenings that begin with intention.",
     tag: "Collection 02",
@@ -51,7 +47,6 @@ const PANELS = [
   {
     id: "resort",
     bg: "var(--bg)",
-    accent: "linear-gradient(138deg, rgba(181,163,127,0.06) 0%, rgba(181,163,127,0.024) 29%, transparent 56%)",
     headline: "Resort",
     sub: "ECONYL® recycled nylon. Made for the ocean. Returned to it.",
     tag: "Collection 03",
@@ -62,7 +57,6 @@ const PANELS = [
   {
     id: "vault",
     bg: "var(--bg)",
-    accent: "linear-gradient(142deg, rgba(179,160,124,0.06) 0%, rgba(179,160,124,0.022) 34%, transparent 62%)",
     headline: "Vault",
     sub: "Numbered editions. Rare compositions. Not restocked.",
     tag: "Collection 04",
