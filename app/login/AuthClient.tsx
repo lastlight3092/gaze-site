@@ -44,9 +44,15 @@ export default function AuthClient({ mode }: { mode: "login" | "signup" }) {
       <div style={{ background: "var(--surface)", display: "flex", alignItems: "center",
         justifyContent: "center", padding: "48px 56px", borderLeft: "1px solid var(--border-light)" }}>
         <div style={{ width: "100%", maxWidth: 340 }}>
-          <Link href="/" style={{ fontFamily: "var(--serif)", fontSize: 20, letterSpacing: "0.25em",
-            color: "var(--text-primary)", textDecoration: "none", display: "block",
-            marginBottom: 52, textTransform: "uppercase" }}>Gaze</Link>
+          <Link href="/" style={{
+            color: "var(--text-secondary)", textDecoration: "none", display: "flex",
+            alignItems: "center", marginBottom: 52, width: "fit-content",
+          }} title="Home">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1">
+              <path d="M1 8l8-6.5L17 8" />
+              <path d="M3 6.8V16h4.5v-4h3v4H15V6.8" />
+            </svg>
+          </Link>
 
           <h1 style={{ fontFamily: "var(--serif)", fontSize: 30, fontWeight: 400,
             marginBottom: 8, color: "var(--text-primary)" }}>

@@ -46,9 +46,15 @@ export default function CheckoutPage() {
         <div style={{ padding: "64px 80px 80px", borderRight: "1px solid rgba(168,137,90,0.08)" }}
           className="co-form">
 
-          <Link href="/" style={{ fontFamily: "var(--serif)", fontSize: 18, letterSpacing: "0.25em",
-            color: "var(--parchment)", textDecoration: "none", display: "block", marginBottom: 56,
-            textTransform: "uppercase" }}>Gaze</Link>
+          <Link href="/" style={{
+            color: "var(--text-secondary)", textDecoration: "none", display: "flex",
+            alignItems: "center", marginBottom: 56, width: "fit-content",
+          }} title="Home">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1">
+              <path d="M1 8l8-6.5L17 8" />
+              <path d="M3 6.8V16h4.5v-4h3v4H15V6.8" />
+            </svg>
+          </Link>
 
           {/* Steps */}
           <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 56 }}>

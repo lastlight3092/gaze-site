@@ -28,19 +28,34 @@ export default function Header() {
           padding: "0 40px",
         }}
       >
-        {/* Logo */}
+        {/* Home */}
         <Link
           href="/"
           style={{
-            fontFamily: "var(--serif)",
-            fontSize: 26,
-            fontWeight: 500,
-            letterSpacing: "0.22em",
-            color: "var(--text-primary)",
+            background: "none",
+            border: "none",
+            color: "var(--text-secondary)",
+            fontSize: 18,
+            cursor: "pointer",
+            padding: 4,
             textDecoration: "none",
+            lineHeight: 1,
+            display: "flex",
+            alignItems: "center",
           }}
+          title="Home"
         >
-          GAZE
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+          >
+            <path d="M1 8l8-6.5L17 8" />
+            <path d="M3 6.8V16h4.5v-4h3v4H15V6.8" />
+          </svg>
         </Link>
 
         {/* Desktop Nav */}
