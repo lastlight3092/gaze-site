@@ -69,7 +69,7 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 20%, transparent 82%, rgba(214, 202, 179, 0.05) 100%);
+  background: transparent;
 }
 
 /* ─── Typography ─── */

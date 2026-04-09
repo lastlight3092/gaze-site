@@ -300,20 +300,6 @@ export default function Home() {
               className="editorial-panel"
               style={{ background: panel.bg, "--panel-zen": panel.zen } as CSSProperties}
             >
-              {/* Accent light */}
-              <div aria-hidden style={{
-                position: "absolute", inset: 0,
-                background: panel.accent,
-                zIndex: 1,
-              }} />
-
-              {/* Vignette */}
-              <div aria-hidden style={{
-                position: "absolute", inset: 0,
-                background: "linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 22%, transparent 78%, rgba(30,28,26,0.04) 100%)",
-                zIndex: 2,
-              }} />
-
               {/* Text layer */}
               <div className={`panel-inner ${posClass} ${valignClass}`} style={{ zIndex: 4 }}>
                 {isOpener ? (
