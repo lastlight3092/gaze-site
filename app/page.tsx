@@ -6,8 +6,8 @@ import Link from "next/link";
 const PANELS = [
   {
     id: "opener",
-    bg: "linear-gradient(168deg, #1a1208 0%, #2c1e0e 35%, #3d2a14 60%, #1e1509 100%)",
-    accent: "linear-gradient(90deg, rgba(168,137,90,0.15) 0%, transparent 60%)",
+    bg: "linear-gradient(168deg, #f0ece5 0%, #eae4db 35%, #ede8df 60%, #f2ece4 100%)",
+    accent: "radial-gradient(ellipse at 40% 40%, rgba(184,137,106,0.07) 0%, transparent 60%)",
     headline: null,
     sub: null,
     tag: "Bangkok · Est. 2024",
@@ -17,8 +17,8 @@ const PANELS = [
   },
   {
     id: "statement",
-    bg: "linear-gradient(145deg, #0e0c08 0%, #241a0e 50%, #2e2010 100%)",
-    accent: "radial-gradient(ellipse at 30% 60%, rgba(107,79,53,0.3) 0%, transparent 65%)",
+    bg: "linear-gradient(145deg, #edeae6 0%, #e8e4de 50%, #ece7e0 100%)",
+    accent: "radial-gradient(ellipse at 30% 60%, rgba(184,137,106,0.05) 0%, transparent 65%)",
     headline: "Worn close.\nFelt privately.",
     sub: null,
     tag: null,
@@ -28,8 +28,8 @@ const PANELS = [
   },
   {
     id: "core",
-    bg: "linear-gradient(200deg, #2a1e12 0%, #1a1209 40%, #3d2e1e 100%)",
-    accent: "radial-gradient(ellipse at 75% 40%, rgba(168,137,90,0.2) 0%, transparent 55%)",
+    bg: "linear-gradient(200deg, #ede7de 0%, #e8e2d8 40%, #ede6db 100%)",
+    accent: "radial-gradient(ellipse at 75% 40%, rgba(184,137,106,0.08) 0%, transparent 55%)",
     headline: "Core",
     sub: "The foundation. Supima Modal, cut precisely for the tropical day.",
     tag: "Collection 01",
@@ -39,8 +39,8 @@ const PANELS = [
   },
   {
     id: "after-dark",
-    bg: "linear-gradient(160deg, #0a0806 0%, #1c120a 45%, #241808 100%)",
-    accent: "radial-gradient(ellipse at 20% 30%, rgba(90,68,42,0.35) 0%, transparent 60%)",
+    bg: "linear-gradient(160deg, #e8e6e2 0%, #e2dfd9 45%, #e6e2dd 100%)",
+    accent: "radial-gradient(ellipse at 20% 30%, rgba(140,120,100,0.08) 0%, transparent 60%)",
     headline: "After Dark",
     sub: "Japanese micro-voile. For evenings that begin with intention.",
     tag: "Collection 02",
@@ -50,8 +50,8 @@ const PANELS = [
   },
   {
     id: "resort",
-    bg: "linear-gradient(135deg, #1e1a10 0%, #2e2618 50%, #3a2e1a 100%)",
-    accent: "radial-gradient(ellipse at 60% 70%, rgba(154,125,95,0.25) 0%, transparent 60%)",
+    bg: "linear-gradient(135deg, #ece9e3 0%, #e6e2db 50%, #eae5de 100%)",
+    accent: "radial-gradient(ellipse at 60% 70%, rgba(154,125,95,0.07) 0%, transparent 60%)",
     headline: "Resort",
     sub: "ECONYL® recycled nylon. Made for the ocean. Returned to it.",
     tag: "Collection 03",
@@ -61,8 +61,8 @@ const PANELS = [
   },
   {
     id: "vault",
-    bg: "linear-gradient(170deg, #12100c 0%, #1e1810 60%, #2a2014 100%)",
-    accent: "radial-gradient(ellipse at 50% 50%, rgba(168,137,90,0.12) 0%, transparent 70%)",
+    bg: "linear-gradient(170deg, #e8e5e0 0%, #e2dfda 60%, #e6e2dc 100%)",
+    accent: "radial-gradient(ellipse at 50% 50%, rgba(184,137,106,0.05) 0%, transparent 70%)",
     headline: "Vault",
     sub: "Numbered editions. Rare compositions. Not restocked.",
     tag: "Collection 04",
@@ -114,12 +114,12 @@ export default function Home() {
         .editorial-panel::after {
           content: '';
           position: absolute; inset: 0;
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
           background-size: 300px;
           pointer-events: none;
           z-index: 3;
-          opacity: 0.55;
-          mix-blend-mode: overlay;
+          opacity: 0.3;
+          mix-blend-mode: multiply;
         }
         /* Reveal animations */
         .panel-text-block {
@@ -144,7 +144,7 @@ export default function Home() {
         .panel-rule {
           width: 0;
           height: 1px;
-          background: rgba(168,137,90,0.5);
+          background: rgba(184,137,106,0.45);
           transition: width 1.4s 0.3s var(--ease-expo);
           display: block;
           margin-bottom: 24px;
@@ -160,10 +160,10 @@ export default function Home() {
           font-size: 11px;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: var(--linen);
+          color: var(--text-secondary);
           text-decoration: none;
           font-family: var(--sans);
-          font-weight: 300;
+          font-weight: 400;
           margin-top: 36px;
           opacity: 0;
           transform: translateX(-8px);
@@ -176,27 +176,26 @@ export default function Home() {
         .panel-cta::after {
           content: '';
           width: 32px; height: 1px;
-          background: var(--brass);
+          background: var(--accent);
           transition: width 0.4s var(--ease-expo);
           display: block;
         }
-        .panel-cta:hover { color: var(--parchment); }
+        .panel-cta:hover { color: var(--text-primary); }
         .panel-cta:hover::after { width: 56px; }
 
         /* Opener special */
         .opener-logo {
-          font-family: var(--serif);
+          font-family: var(--sans);
           font-size: clamp(72px, 12vw, 160px);
-          font-weight: 400;
-          letter-spacing: 0.12em;
-          color: transparent;
-          -webkit-text-stroke: 1px rgba(226,213,195,0.25);
+          font-weight: 300;
+          letter-spacing: 0.18em;
+          color: var(--text-primary);
           text-transform: uppercase;
           line-height: 1;
           user-select: none;
           opacity: 0;
           transform: scale(0.97);
-          transition: opacity 2s var(--ease-expo), transform 2.5s var(--ease-expo), -webkit-text-stroke-color 0.5s;
+          transition: opacity 2s var(--ease-expo), transform 2.5s var(--ease-expo);
         }
         .opener-logo.panel-visible {
           opacity: 1;
@@ -206,7 +205,7 @@ export default function Home() {
           font-size: 10px;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: var(--brass);
+          color: var(--accent);
           font-family: var(--sans);
           font-weight: 300;
           opacity: 0;
@@ -218,7 +217,7 @@ export default function Home() {
           font-size: 9px;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: rgba(168,137,90,0.5);
+          color: rgba(184,137,106,0.55);
           font-family: var(--sans);
           position: absolute;
           bottom: 40px;
@@ -236,7 +235,7 @@ export default function Home() {
           content: '';
           width: 1px;
           height: 48px;
-          background: linear-gradient(to bottom, rgba(168,137,90,0.6), transparent);
+          background: linear-gradient(to bottom, rgba(184,137,106,0.5), transparent);
           animation: scrollPulse 2s 2.5s infinite;
         }
         @keyframes fadeUpHint {
@@ -287,7 +286,7 @@ export default function Home() {
               {/* Vignette */}
               <div aria-hidden style={{
                 position: "absolute", inset: 0,
-                background: "radial-gradient(ellipse at center, transparent 30%, rgba(14,10,6,0.7) 100%)",
+                background: "radial-gradient(ellipse at center, transparent 50%, rgba(30,28,26,0.05) 100%)",
                 zIndex: 2,
               }} />
 
@@ -321,12 +320,12 @@ export default function Home() {
 
                     {panel.headline && (
                       <h2 style={{
-                        fontFamily: "var(--serif)",
+                        fontFamily: "var(--sans)",
                         fontSize: "clamp(40px, 6vw, 88px)",
-                        fontWeight: 400,
+                        fontWeight: 300,
                         lineHeight: 1.05,
-                        letterSpacing: "-0.01em",
-                        color: "var(--parchment)",
+                        letterSpacing: "0.01em",
+                        color: "var(--text-primary)",
                         whiteSpace: "pre-line",
                         marginBottom: panel.sub ? 20 : 0,
                       }}>{panel.headline}</h2>
@@ -335,7 +334,7 @@ export default function Home() {
                     {panel.sub && (
                       <p style={{
                         fontSize: 14,
-                        color: "var(--tan)",
+                        color: "var(--text-secondary)",
                         lineHeight: 1.8,
                         letterSpacing: "0.03em",
                         fontWeight: 300,
@@ -362,7 +361,7 @@ export default function Home() {
                   bottom: 32, right: 48,
                   fontSize: 10,
                   letterSpacing: "0.2em",
-                  color: "rgba(107,79,53,0.5)",
+                  color: "rgba(90,85,80,0.35)",
                   fontFamily: "var(--sans)",
                   zIndex: 4,
                   writingMode: "vertical-rl",
@@ -376,8 +375,8 @@ export default function Home() {
 
         {/* ─── Final gateway ─── */}
         <section style={{
-          background: "var(--espresso)",
-          borderTop: "1px solid rgba(168,137,90,0.15)",
+          background: "var(--bg)",
+          borderTop: "1px solid var(--border)",
           padding: "120px 80px",
           display: "flex",
           flexDirection: "column",
@@ -387,28 +386,28 @@ export default function Home() {
         }}>
           <div style={{
             fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase",
-            color: "var(--brass)", fontFamily: "var(--sans)", marginBottom: 32,
+            color: "var(--accent)", fontFamily: "var(--sans)", marginBottom: 32,
           }}>
             All Collections
           </div>
           <h2 style={{
-            fontFamily: "var(--serif)",
+            fontFamily: "var(--sans)",
             fontSize: "clamp(32px, 5vw, 64px)",
-            fontWeight: 400,
-            color: "var(--parchment)",
+            fontWeight: 300,
+            color: "var(--text-primary)",
             lineHeight: 1.1,
             marginBottom: 48,
-            letterSpacing: "-0.01em",
+            letterSpacing: "0.01em",
           }}>
             Four lines.<br />
-            <em style={{ color: "var(--tan)" }}>One standard.</em>
+            <span style={{ color: "var(--accent)" }}>One standard.</span>
           </h2>
 
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             gap: 1,
-            background: "rgba(168,137,90,0.1)",
+            background: "var(--border)",
             width: "100%",
             maxWidth: 1000,
             marginBottom: 80,
@@ -422,7 +421,7 @@ export default function Home() {
               <Link key={c.slug} href={`/collections/${c.slug}`}
                 style={{ textDecoration: "none", display: "block" }}>
                 <div className="gateway-card" style={{
-                  background: "var(--espresso)",
+                  background: "var(--bg)",
                   padding: "48px 28px 36px",
                   display: "flex",
                   flexDirection: "column",
@@ -432,15 +431,15 @@ export default function Home() {
                 }}>
                   <div style={{
                     fontSize: 9, letterSpacing: "0.22em", textTransform: "uppercase",
-                    color: "var(--tobacco)", fontFamily: "var(--sans)", marginBottom: "auto",
+                    color: "var(--text-muted)", fontFamily: "var(--sans)", marginBottom: "auto",
                   }}>{c.num}</div>
                   <div>
                     <div style={{
-                      fontFamily: "var(--serif)", fontSize: 22, fontWeight: 400,
-                      color: "var(--parchment)", marginBottom: 6, letterSpacing: "0.01em",
+                      fontFamily: "var(--sans)", fontSize: 22, fontWeight: 300,
+                      color: "var(--text-primary)", marginBottom: 6, letterSpacing: "0.02em",
                     }}>{c.label}</div>
                     <div style={{
-                      fontSize: 11, color: "var(--tobacco)", letterSpacing: "0.08em",
+                      fontSize: 11, color: "var(--text-muted)", letterSpacing: "0.08em",
                       fontFamily: "var(--sans)", fontWeight: 300,
                     }}>{c.note}</div>
                   </div>
@@ -451,7 +450,7 @@ export default function Home() {
 
           {/* Footer strip */}
           <div style={{
-            borderTop: "1px solid rgba(168,137,90,0.12)",
+            borderTop: "1px solid var(--border)",
             width: "100%",
             paddingTop: 40,
             display: "flex",
@@ -468,8 +467,8 @@ export default function Home() {
               ["Free returns","Within 14 days. No reason required."],
             ].map(([title, note]) => (
               <div key={title} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--brass)", marginBottom: 6, fontFamily: "var(--sans)" }}>{title}</div>
-                <div style={{ fontSize: 12, color: "var(--tobacco)", fontFamily: "var(--sans)", fontWeight: 300 }}>{note}</div>
+                <div style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 6, fontFamily: "var(--sans)" }}>{title}</div>
+                <div style={{ fontSize: 12, color: "var(--text-muted)", fontFamily: "var(--sans)", fontWeight: 300 }}>{note}</div>
               </div>
             ))}
           </div>
@@ -477,8 +476,8 @@ export default function Home() {
 
         {/* Site footer */}
         <footer style={{
-          background: "var(--ink)",
-          borderTop: "1px solid rgba(168,137,90,0.08)",
+          background: "var(--surface)",
+          borderTop: "1px solid var(--border)",
           padding: "32px 80px",
           display: "flex",
           justifyContent: "space-between",
@@ -486,12 +485,12 @@ export default function Home() {
           flexWrap: "wrap",
           gap: 16,
         }}>
-          <span style={{ fontFamily: "var(--serif)", fontSize: 16, letterSpacing: "0.2em", color: "var(--tobacco)" }}>Gaze</span>
-          <span style={{ fontSize: 11, color: "rgba(107,79,53,0.6)", letterSpacing: "0.1em", fontFamily: "var(--sans)" }}>© 2024 GAZE Private Ltd · Bangkok</span>
+          <span style={{ fontFamily: "var(--sans)", fontSize: 16, letterSpacing: "0.2em", color: "var(--text-secondary)" }}>GAZE</span>
+          <span style={{ fontSize: 11, color: "var(--text-muted)", letterSpacing: "0.1em", fontFamily: "var(--sans)" }}>© 2024 GAZE Private Ltd · Bangkok</span>
           <div style={{ display: "flex", gap: 28 }}>
             {[["Privacy & Packaging", "/privacy-packaging"],["Fit Guide","/fit-guide"],["Materials","/materials"]].map(([l,h]) => (
               <Link key={h} href={h} style={{
-                fontSize: 11, letterSpacing: "0.14em", color: "rgba(107,79,53,0.6)",
+                fontSize: 11, letterSpacing: "0.14em", color: "var(--text-muted)",
                 textDecoration: "none", fontFamily: "var(--sans)", textTransform: "uppercase",
               }}>{l}</Link>
             ))}
@@ -500,7 +499,7 @@ export default function Home() {
       </div>
 
       <style>{`
-        .gateway-card:hover { background: var(--walnut) !important; }
+        .gateway-card:hover { background: var(--surface-alt) !important; }
         @media(max-width: 900px) {
           .gateway-grid { grid-template-columns: repeat(2,1fr) !important; }
         }

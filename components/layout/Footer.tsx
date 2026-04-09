@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "var(--charcoal)",
+        background: "var(--surface)",
         borderTop: "1px solid var(--border)",
         padding: "60px 40px 32px",
       }}
